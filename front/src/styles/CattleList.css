@@ -1,0 +1,122 @@
+
+.cattle-list {
+  /* font-family: Arial, sans-serif; */
+  /* max-width: 800px; */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.test1{
+  cursor: pointer;
+}
+
+.cattle-head{
+  display: flex;
+  flex-direction: row;
+  color: white;
+  justify-content:space-between;
+}
+
+.cattle-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-around; */
+}
+
+.cow-item {
+  flex: 0 0 calc(33.33% - 20px); /* Adjust for margin and padding */
+  margin: 10px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  background-color: #4b0082;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: colorChange 5s infinite;
+  transition: transform 0.3s ease-in-out;
+}
+
+@keyframes colorChange {
+  0%, 100% {
+    background-color: #01082e;
+  }
+  50% {
+    background-color: #000000;
+  }
+}
+
+.cow-item:hover {
+  transform: scale(1.05);
+}
+
+body{
+  background-color: rgb(0, 2, 5);
+}
+
+
+
+h2{
+  color: aliceblue;
+}
+.cattle-list {
+  position: relative;
+}
+
+.cow-details {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  background-color:aliceblue;
+  height: 60vh;
+  border-radius: 10px;
+}
+
+.image-container {
+  flex: 2;
+  margin-right: 20px; /* Add spacing between image and details */
+  margin-left: 20px;
+}
+
+.details-container {
+  flex: 2; /* Take up two-thirds of the width */
+  margin-left: 20px;
+  
+}
+
+.image-container img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#img{
+  /* flex: 1; */
+    max-width:85%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+
+  .button {
+    /* display: inline-block;
+    
+    font-size: 16px;
+    font-weight: bold; */
+    text-align: center;
+    /* text-decoration: none; */
+    padding: 6px 10px;
+    color: #ffffff;
+    background-color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  .button:active {
+    background-color: #003366;
+    border-color: #003366;
+  }
+  

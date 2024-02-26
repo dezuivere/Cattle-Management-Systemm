@@ -1,44 +1,20 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import './App.css';
+import AddCattleForm from "./components/AddCattle";
+import CattleList from "./components/CattleList"
 
-function App() {
-  const [test, setTest] = useState([]);
-  useEffect(() => {
-    async function lalala() {
-      const response = await axios.get("http://localhost:8080/");
-      setTest(response.data);
-      console.log(test);
-    }
-    lalala();
-  });
 
+const App = () => {
   return (
-    <div className="App">
-      <table>
-        <thead>
-          <tr>
-            <th>cow ID</th>
-            <th>age</th>
-            <th>gender</th>
-            <th>health</th>
-            <th>caretaker_id</th>
-            <th>doc_id</th>
-            <th>room_no</th>
-          </tr>
-        </thead>
-        {test.map((cow) => (
-          <tbody>
-            <td>{cow.cow_id}</td>
-            <td>{cow.age}</td>
-            <td>{cow.gender}</td>
-            <td>{cow.health}</td>
-            <td>{cow.caretaker_id}</td>
-            <td>{cow.doc_id}</td>
-            <td>{cow.room_no}</td>
-          </tbody>
-        ))}
-      </table>
-    </div>
+    <>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<AddCattleForm />} path='/add_Cattle' />
+        <Route element={<CattleList />} path='/' />
+      </Routes>
+    </BrowserRouter>
+  </>
   );
 }
 
