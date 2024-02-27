@@ -33,7 +33,7 @@ const RoomsList = () => {
         <div className="cattle-head">
           <div><h2>ROOM LIST</h2></div>
           <div className="test1" onClick={() => clickHandle()}>
-            <button className="header">Add room</button>
+            <button className="header">+</button>
           </div>
         </div>
   
