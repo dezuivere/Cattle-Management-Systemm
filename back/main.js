@@ -44,6 +44,16 @@ app.get("/employee_list", (req, res) => {
   });
 });
 
+app.get("/room_list", (req, res) => {
+  const sql = `SELECT * FROM rooms;`;
+  connection.query(sql, function (err, response) {
+    if (err) throw err;
+    else {
+      res.send(response);
+    }
+  });
+});
+
 // Endpoint to add cattle details
 app.post("/add_cattle", (req, res) => {
   const {
@@ -110,8 +120,8 @@ app.post("/add_employee", (req, res) => {
 
 app.post("/get_doctor_specific_details", (req, res) => {
   const cow_id = req.body.id;
-  const sql = `SELECT * FROM doctor WHERE d_id = (SELECT doc_id FROM cattle WHERE cow_id = ${cow_id})`;
-  connection.query(sql, function (err, response) {
+  const sql = `SELECT * FROM doctor WHERE d_id = (SELECT doc_id FROM cattle WHERE cow_id = ?)`;
+  connection.query(sql,[cow_id], function (err, response) {
     if (err) {
       console.log(err);
     } else {
@@ -122,8 +132,8 @@ app.post("/get_doctor_specific_details", (req, res) => {
 
 app.post("/get_caretaker_specific_details", (req, res) => {
   const cow_id = req.body.id;
-  const sql = `SELECT * FROM employee WHERE emp_id = (SELECT caretaker_id FROM cattle WHERE cow_id = ${cow_id})`;
-  connection.query(sql, function (err, response) {
+  const sql = `SELECT * FROM employee WHERE emp_id = (SELECT caretaker_id FROM cattle WHERE cow_id = ?)`;
+  connection.query(sql, [cow_id],function (err, response) {
     if (err) {
       console.log(err);
     } else {
@@ -134,15 +144,18 @@ app.post("/get_caretaker_specific_details", (req, res) => {
 
 app.post("/get_room_specific_details", (req, res) => {
   const cow_id = req.body.id;
-  const sql = `SELECT * FROM rooms WHERE room_no = (SELECT room_no FROM cattle WHERE cow_id = ${cow_id})`;
-  connection.query(sql, function (err, response) {
+  console.log(cow_id);
+  const sql = `SELECT * FROM rooms WHERE room_no = (SELECT room_no FROM cattle WHERE cow_id = ?)`;
+  connection.query(sql, [cow_id], function (err, response) {
     if (err) {
-      console.log(err);
+      console.error("Error fetching room details:", err);
+      res.status(500).send("Error fetching room details");
     } else {
       res.status(200).send(response);
     }
   });
 });
+
 
 //establishes connections
 app.listen(8080, () => {
