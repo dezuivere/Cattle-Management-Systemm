@@ -24,7 +24,17 @@ app.get("/", (req, res) => {
     })
 })
 
-// Endpoint to add player details
+app.get("/doctor_list", (req, res) => {
+    const sql = `SELECT * FROM doctor;`;
+    connection.query(sql, function (err, response) {
+        if (err) throw err;
+        else{
+           res.send(response); 
+        } 
+    })
+})
+
+// Endpoint to add cattle details
 app.post("/add_cattle", (req, res) => {
     const { age, gender, health, caretaker_id, doc_id, room_no, weight, color, breed, birth_date, last_vaccination, price } = req.body;
 
@@ -37,6 +47,23 @@ app.post("/add_cattle", (req, res) => {
             res.status(500).send({ message: "Failed to add cattle" });
         } else {
             res.status(200).send({ message: "Cattle added successfully" });
+        }
+    });
+});
+
+// Endpoint to add doctor details
+app.post("/add_doctor", (req, res) => {
+    const { d_id,name,contact,specialization,hospital } = req.body;
+
+    const sql = `INSERT INTO doctor (d_id,name,contact,specialization,hospital) 
+                 VALUES ('${d_id}','${name}', '${contact}', '${specialization}', '${hospital}');`;
+
+    connection.query(sql, function (err) {
+        if (err) {
+            console.error("Error adding doctor:", err);
+            res.status(500).send({ message: "Failed to add doctor" });
+        } else {
+            res.status(200).send({ message: "Doctor added successfully" });
         }
     });
 });

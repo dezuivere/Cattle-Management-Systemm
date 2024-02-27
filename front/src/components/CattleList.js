@@ -44,9 +44,8 @@ const CattleList = () => {
           >
             <img id="img" src={cow2} alt="Cow" />
             <div className="cow-info">
-              <div> {cow.breed}</div>
-              <div> {cow.price}</div>
-              <button className="button">Know more</button>
+              <div> Breed : {cow.breed}</div>
+              <div> price : {cow.price}</div>
             </div>
           </div>
         ))}
