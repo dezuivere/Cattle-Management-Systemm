@@ -2,13 +2,20 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/EmployeeList.css";
 import employeeImg from "./employee.jpg";
+import Modal from "./Modal";
 
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
+  const [selectedEmployee, setSelectedEmployee] = useState(null);
 
   function handleClick() {
     window.location.href = "/add_employee";
   }
+
+  const handleEmployeeClick = (employee) => {
+    setSelectedEmployee(employee);
+    // localStorage.setItem("selectedCow",cow.cow_id);
+  };
 
   useEffect(() => {
     axios
@@ -23,28 +30,49 @@ const EmployeeList = () => {
 
   return (
     <div className="employee-list">
-      <div className="employee-head">
-        <div>Employee LIST</div>
-        <div className="add-employee" onClick={() => handleClick()}>
-          Add Employee
+      <div className="cattle-head">
+        <div>
+          <h2>EMPLOYEE LIST</h2>
+        </div>
+        <div className="test1" onClick={() => handleClick()}>
+          <button className="header">Add Employee</button>
         </div>
       </div>
 
       <div className="employee-container">
         {employees.map((employee) => (
-          <div key={employee.emp_id} className="employee-item">
+          <div key={employee.emp_id} className="employee-item" onClick={() => handleEmployeeClick(employee)}>
             <img src={employeeImg} alt="employee" />
             <div className="employee-info">
               <div> ID: {employee.emp_id}</div>
               <div> Name: {employee.name}</div>
-              <div> Age: {employee.age}</div>
-              <div> Address: {employee.address}</div>
-              <div> Salary: {employee.salary}</div>
-              <div> Phone No: {employee.phone_no}</div>
             </div>
           </div>
         ))}
       </div>
+      <Modal
+        isOpen={selectedEmployee !== null}
+        onClose={() => setSelectedEmployee(null)}
+      >
+        {selectedEmployee && (
+          <div className="cow-details">
+            <div className="image-container">
+              <img src={employeeImg} alt="Cow" />
+            </div>
+            <div className="details-container">
+              <div>ID: {selectedEmployee.emp_id}</div>
+              <div>Name: {selectedEmployee.name}</div>
+              <div>Age: {selectedEmployee.age}</div>
+              <div>Adress: {selectedEmployee.address}</div>
+              <div>Salary ID: {selectedEmployee.salary}</div>
+              <div>Phone no: {selectedEmployee.phone_no}</div>
+              {/* <div>
+                <button className="header" onClick={()=>getExtraDetails()}>Extra Details</button>
+              </div> */}
+            </div>
+          </div>
+        )}
+      </Modal>
     </div>
   );
 };

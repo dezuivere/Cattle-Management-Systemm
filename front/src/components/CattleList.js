@@ -8,9 +8,12 @@ import cow2 from "./cow2.jpg";
 const CattleList = () => {
   const [cattle, setCattle] = useState([]);
   const [selectedCow, setSelectedCow] = useState(null);
-
+  function getExtraDetails() {
+    window.location.href = "/extra_details"
+  }
   const handleCowClick = (cow) => {
     setSelectedCow(cow);
+    localStorage.setItem("selectedCow",cow.cow_id);
   };
   function clickHandle() {
     window.location.href = "/add_cattle";
@@ -29,9 +32,9 @@ const CattleList = () => {
   return (
     <div className="cattle-list">
       <div className="cattle-head">
-        <div>CATTLE LIST</div>
+        <div><h2>CATTLE LIST</h2></div>
         <div className="test1" onClick={() => clickHandle()}>
-          Add cattle
+          <button className="header">Add Cattle</button>
         </div>
       </div>
 
@@ -57,7 +60,7 @@ const CattleList = () => {
               <img src={cow1} alt="Cow" />
             </div>
             <div className="details-container">
-              <div>ID: {selectedCow.cow_id}</div>
+              <div>ID: {(localStorage.getItem("selectedCow"))}</div>
               <div>Age: {selectedCow.age}</div>
               <div>Gender: {selectedCow.gender}</div>
               <div>Health: {selectedCow.health}</div>
@@ -71,8 +74,7 @@ const CattleList = () => {
               <div>Vaccination: {selectedCow.last_vaccination}</div>
               <div>Price: {selectedCow.price}</div>
               <div>
-                <button>doctorDetails</button>
-                <button>employeeDetails</button>
+                <button className="header" onClick={()=>getExtraDetails()}>Extra Details</button>
               </div>
             </div>
           </div>

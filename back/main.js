@@ -35,14 +35,14 @@ app.get("/doctor_list", (req, res) => {
 });
 
 app.get("/employee_list", (req, res) => {
-    const sql = `SELECT * FROM employee;`;
-    connection.query(sql, function (err, response) {
-      if (err) throw err;
-      else {
-        res.send(response);
-      }
-    });
+  const sql = `SELECT * FROM employee;`;
+  connection.query(sql, function (err, response) {
+    if (err) throw err;
+    else {
+      res.send(response);
+    }
   });
+});
 
 // Endpoint to add cattle details
 app.post("/add_cattle", (req, res) => {
@@ -93,35 +93,53 @@ app.post("/add_doctor", (req, res) => {
 
 // Endpoint to add employee details
 app.post("/add_employee", (req, res) => {
-    const { emp_id, name, age, address, salary, phone_no } = req.body;
-
-    const sql = `INSERT INTO employee (emp_id, name, age, address, salary, phone_no) 
+  const { emp_id, name, age, address, salary, phone_no } = req.body;
+  console.log(phone_no);
+  const sql = `INSERT INTO employee (emp_id, name, age, address, salary, phone_no) 
                  VALUES ('${emp_id}', '${name}', '${age}', '${address}', '${salary}', '${phone_no}');`;
 
-    connection.query(sql, function (err) {
-        if (err) {
-            console.error("Error adding employee:", err);
-            res.status(500).send({ message: "Failed to add employee" });
-        } else {
-            res.status(200).send({ message: "Employee added successfully" });
-        }
-    });
+  connection.query(sql, function (err) {
+    if (err) {
+      console.error("Error adding employee:", err);
+      res.status(500).send({ message: "Failed to add employee" });
+    } else {
+      res.status(200).send({ message: "Employee added successfully" });
+    }
+  });
 });
 
-
-app.get("/get_doctor_details/:doc_id", (req, res) => {
-  const docId = req.params.doc_id;
-  const sql = `SELECT * FROM doctor WHERE d_id = ${docId};`;
+app.post("/get_doctor_specific_details", (req, res) => {
+  const cow_id = req.body.id;
+  const sql = `SELECT * FROM doctor WHERE d_id = (SELECT doc_id FROM cattle WHERE cow_id = ${cow_id})`;
   connection.query(sql, function (err, response) {
     if (err) {
-      console.error("Error fetching doctor details:", err);
-      res.status(500).send({ message: "Failed to fetch doctor details" });
+      console.log(err);
     } else {
-      if (response.length > 0) {
-        res.status(200).send(response[0]);
-      } else {
-        res.status(404).send({ message: "Doctor not found" });
-      }
+      res.status(200).send(response);
+    }
+  });
+});
+
+app.post("/get_caretaker_specific_details", (req, res) => {
+  const cow_id = req.body.id;
+  const sql = `SELECT * FROM employee WHERE emp_id = (SELECT caretaker_id FROM cattle WHERE cow_id = ${cow_id})`;
+  connection.query(sql, function (err, response) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.status(200).send(response);
+    }
+  });
+});
+
+app.post("/get_room_specific_details", (req, res) => {
+  const cow_id = req.body.id;
+  const sql = `SELECT * FROM rooms WHERE room_no = (SELECT room_no FROM cattle WHERE cow_id = ${cow_id})`;
+  connection.query(sql, function (err, response) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.status(200).send(response);
     }
   });
 });

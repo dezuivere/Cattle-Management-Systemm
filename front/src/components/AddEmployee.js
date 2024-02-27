@@ -9,7 +9,7 @@ const AddEmployee = () => {
     age: "",
     address: "",
     salary: "",
-    phone_no: "",
+    phone_no: 0,
   });
 
   const handleChange = (e) => {
@@ -21,6 +21,7 @@ const AddEmployee = () => {
   };
 
   const handleSubmit = (e) => {
+    console.log(formData);
     e.preventDefault();
     axios
       .post("http://localhost:8080/add_employee", formData)
@@ -34,7 +35,7 @@ const AddEmployee = () => {
           age: "",
           address: "",
           salary: "",
-          phone_no: "",
+          phone_no: 0,
         });
       })
       .catch((error) => {

@@ -10,6 +10,18 @@
     cursor: pointer;
   }
   
+  .header{
+    text-align: center;
+    text-decoration: none;
+    padding: 6px 10px;
+    color: #ffffff;
+    background-color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  }
+
   .employee-head{
     display: flex;
     flex-direction: row;

@@ -7,7 +7,7 @@ import DoctorList from "./components/DoctersList";
 import AddDoctor from "./components/AddDoctor";
 import AddEmployee from './components/AddEmployee';
 import EmployeeList from './components/EmployeeList';
-
+import ExtraDetails from './components/ExtraDetails';
 
 const App = () => {
   return (
@@ -18,6 +18,7 @@ const App = () => {
         <Route element={<AddCattleForm />} path='/add_Cattle' />
         <Route element={<CattleList />} path='/' />
         <Route element={<DoctorList />} path='/doctor_list' />
+        <Route element={<ExtraDetails />} path='/extra_details' />
         <Route element={<EmployeeList/>} path='employee_list'/>
         <Route element={<AddEmployee/>} path='/add_employee'/>
       </Routes>

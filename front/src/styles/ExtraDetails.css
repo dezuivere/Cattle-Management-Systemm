@@ -1,0 +1,17 @@
+.details-flex{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    top: 30vh;
+    /* background-color: blue; */
+    /* width: 20vw; */
+    justify-content: space-around;
+}
+
+.extra-details{
+    width: 20vw;
+    background-color: rgba(0, 0, 0, 0.601);
+    color: aliceblue;
+    text-align: center;
+    padding: 70px;
+}
