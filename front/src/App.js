@@ -9,6 +9,7 @@ import AddEmployee from './components/AddEmployee';
 import EmployeeList from './components/EmployeeList';
 import ExtraDetails from './components/ExtraDetails';
 import RoomsList from './components/RoomsList';
+import AddRoom from './components/AddRoom';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route element={<ExtraDetails />} path='/extra_details' />
         <Route element={<EmployeeList/>} path='employee_list'/>
         <Route element={<AddEmployee/>} path='/add_employee'/>
+        <Route element={<AddRoom/>} path='/add_room'/>
         
       </Routes>
     </BrowserRouter>

@@ -101,6 +101,23 @@ app.post("/add_doctor", (req, res) => {
   });
 });
 
+// Endpoint to add room details
+app.post("/add_room", (req, res) => {
+  const { room_no, water_supply, food_supply, capacity } = req.body;
+
+  const sql = `INSERT INTO rooms (room_no,water_supply,food_supply,capacity) 
+                 VALUES ('${room_no}','${water_supply}', '${food_supply}', '${capacity}');`;
+
+  connection.query(sql, function (err) {
+    if (err) {
+      console.error("Error adding room:", err);
+      res.status(500).send({ message: "Failed to add room" });
+    } else {
+      res.status(200).send({ message: "Room added successfully" });
+    }
+  });
+});
+
 // Endpoint to add employee details
 app.post("/add_employee", (req, res) => {
   const { emp_id, name, age, address, salary, phone_no } = req.body;
