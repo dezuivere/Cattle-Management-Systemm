@@ -9,9 +9,9 @@
 
 .extra-details{
     width: 20vw;
-    background-color:#7281d3;
+    background-color:rgb(74, 72, 72);
     color: aliceblue;
     text-align: center;
-    padding: 70px;
+    padding: 50px;
     border-radius: 50px;
 }

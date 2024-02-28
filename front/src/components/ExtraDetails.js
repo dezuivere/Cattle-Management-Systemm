@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import '../styles/ExtraDetails.css'
+import employeeImg from './employee.jpg'
+import doc from './doc1.jpg';
+import room from './room.jpg';
 
 const ExtraDetails = () => {
   const [currentCow, setCurrentCow] = useState("");
@@ -50,6 +53,9 @@ const ExtraDetails = () => {
     <div className="details-flex">
       <div className="extra-details">
         <h3>Doctor details</h3>
+        <div className="image-container">
+              <img src={doc} alt="Cow" />
+            </div>
         {cowDoc.map((doc, index) => (
           <div key={index}>
             <div>Doctor ID: {doc.d_id}</div>
@@ -65,6 +71,9 @@ const ExtraDetails = () => {
       
       <div className="extra-details">
       <h3>Caretaker details</h3>
+      <div className="image-container">
+              <img src={employeeImg} alt="Cow" />
+            </div>
         {cowCaretaker.map((caretaker, index) => (
           <div key={index}>
             <div>Caretaker ID: {caretaker.emp_id}</div>
@@ -80,6 +89,9 @@ const ExtraDetails = () => {
       </div>
       <div className="extra-details">
       <h3>Room details</h3>
+      <div className="image-container">
+              <img src={room} alt="Cow" />
+            </div>
         {cowRoom.map((room, index) => (
           <div key={index}>
             <div>Room No: {room.room_no}</div>
