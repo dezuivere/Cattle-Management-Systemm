@@ -14,8 +14,8 @@
   text-decoration: none;
   padding: 6px 10px;
   color: #ffffff;
-  background-color: #007bff;
-  border: 2px solid #007bff;
+  background-color: #111212;
+  border: 2px solid #1d1f20;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
@@ -108,20 +108,20 @@ h2{
     text-decoration: none;
     padding: 6px 10px;
     color: #ffffff;
-    background-color: #007bff;
-    border: 2px solid #007bff;
+    background-color: #151616;
+    border: 2px solid #232528;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
   }
   
   .button:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
+    background-color: #191a1b;
+    border-color: #1f2020;
   }
   
   .button:active {
-    background-color: #003366;
-    border-color: #003366;
+    background-color: #040404;
+    border-color: #0e0f0f;
   }
   

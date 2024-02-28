@@ -1,0 +1,70 @@
+.container {
+    display: flex;
+   
+  }
+
+  button {
+    height: 50px;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #333;
+  }
+  
+  
+  .sidebar {
+    height: 1000px;
+    width: 50px;
+    flex: 1;
+    background-color: rgb(95, 94, 94);
+    padding: 20px;
+  }
+  
+  .content {
+    align-items: center;
+    flex: 3;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+
+  }
+  
+  ul {
+    height: 1000px;
+    list-style-type: none;
+    padding: 0;
+
+  }
+  
+  ul li {
+    height: 50px;
+    margin-bottom: 5px;
+    background-color: rgb(169, 166, 166);
+    border-radius: 10px;
+    border: 1px solid black;
+    align-items: center;
+  }
+  
+  a {
+    color: rgb(6, 6, 6);
+    text-decoration: none;
+    padding-left: 20px;
+  }
+
+  
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  

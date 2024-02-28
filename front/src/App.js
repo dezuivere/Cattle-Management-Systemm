@@ -10,6 +10,7 @@ import EmployeeList from './components/EmployeeList';
 import ExtraDetails from './components/ExtraDetails';
 import RoomsList from './components/RoomsList';
 import AddRoom from './components/AddRoom';
+import Home from './components/Home'
 
 const App = () => {
   return (
@@ -18,7 +19,8 @@ const App = () => {
       <Routes>
         <Route element={<AddDoctor />} path='/add_doctor' />
         <Route element={<AddCattleForm />} path='/add_Cattle' />
-        <Route element={<CattleList />} path='/' />
+        <Route element={<CattleList />} path='/cattle_list' />
+        <Route element={<Home/>} path='/' />
         <Route element={<DoctorList />} path='/doctor_list' />
         <Route element={<RoomsList/>} path='/rooms_list' />
         <Route element={<ExtraDetails />} path='/extra_details' />

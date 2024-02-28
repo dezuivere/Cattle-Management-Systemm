@@ -57,7 +57,7 @@ body {
   width: 100px;
   padding: 5px 10px;
   margin-top: 10px;
-  background-color: #1254ab;
+  background-color: #18181a;
   color: #fff;
   border: none;
   border-radius: 3px;
@@ -65,5 +65,5 @@ body {
 }
 
 .doctor-form-box button:hover {
-  background-color: #0e17d2;
+  background-color: #212127;
 }
