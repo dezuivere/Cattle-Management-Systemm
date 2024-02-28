@@ -33,7 +33,7 @@ const DoctersList = () => {
       <div className="cattle-head">
         <div><h2>DOCTOR LIST</h2></div>
         <div className="test1" onClick={() => clickHandle()}>
-          <button className="header">Add Doctor</button>
+          <button className="header">+</button>
         </div>
       </div>
 
@@ -46,7 +46,7 @@ const DoctersList = () => {
           >
             <img id="img" src={doc} alt="doctor" />
             <div className="cow-info">
-              <div> d_id: {doctor.d_id}</div>
+              {/* <div> d_id: {doctor.d_id}</div> */}
               <div> Name : {doctor.name}</div>
               {/* <div> Contact : {doctor.contact}</div>
               <div> Specialisation : {doctor.specialization}</div>
@@ -63,11 +63,11 @@ const DoctersList = () => {
               <img src={doc} alt="Cow" />
             </div>
             <div className="details-container">
-              <div>ID: {selectedDoctor.d_id}</div>
-              <div>Age: {selectedDoctor.name}</div>
-              <div>Gender: {selectedDoctor.contact}</div>
-              <div>Health: {selectedDoctor.specialization}</div>
-              <div>Caretaker ID: {selectedDoctor.hospital}</div>
+              {/* <div>ID: {selectedDoctor.d_id}</div> */}
+              <div>Name: {selectedDoctor.name}</div>
+              <div>Contact: {selectedDoctor.contact}</div>
+              <div>Specialisation: {selectedDoctor.specialization}</div>
+              <div>Hospital : {selectedDoctor.hospital}</div>
               {/* <div>
                 <button className="header" onClick={()=>getExtraDetails()}>Extra Details</button>
               </div> */}

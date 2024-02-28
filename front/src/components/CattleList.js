@@ -34,7 +34,7 @@ const CattleList = () => {
       <div className="cattle-head">
         <div><h2>CATTLE LIST</h2></div>
         <div className="test1" onClick={() => clickHandle()}>
-          <button className="header">Add Cattle</button>
+          <button className="header">+</button>
         </div>
       </div>
 
@@ -60,13 +60,10 @@ const CattleList = () => {
               <img src={cow1} alt="Cow" />
             </div>
             <div className="details-container">
-              <div>ID: {(localStorage.getItem("selectedCow"))}</div>
+              {/* <div>ID: {(localStorage.getItem("selectedCow"))}</div> */}
               <div>Age: {selectedCow.age}</div>
               <div>Gender: {selectedCow.gender}</div>
               <div>Health: {selectedCow.health}</div>
-              <div>Caretaker ID: {selectedCow.caretaker_id}</div>
-              <div>Doctor ID: {selectedCow.doc_id}</div>
-              <div>Room Number: {selectedCow.room_no}</div>
               <div>Weight: {selectedCow.weight}</div>
               <div>Color: {selectedCow.color}</div>
               <div>Breed: {selectedCow.breed}</div>

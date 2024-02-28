@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/Home.css";
-
+import back from './back.jpg' 
 import CattleList from "./CattleList";
 import DoctorsList from "./DoctersList";
 import EmployeeList from "./EmployeeList";
@@ -27,20 +27,12 @@ const Homepage = () => {
   return (
     <div className="container">
       <div className="sidebar">
-        <h1>CMS</h1>
+        <h1>Cattle.io</h1>
         <ul>
-          <li>
-            <div onClick={() => handleItemClick("cattlelist")}>Cattle List</div>
-          </li>
-          <li>
-            <div onClick={() => handleItemClick("doctorlist")}>Doctor List</div>
-          </li>
-          <li>
-            <div onClick={() => handleItemClick("employeelist")}>Employee List</div>
-          </li>
-          <li>
-            <div onClick={() => handleItemClick("roomlist")}>Room List</div>
-          </li>
+            <div onClick={() => handleItemClick("cattlelist")}><li>Cattle List</li></div>
+            <div onClick={() => handleItemClick("doctorlist")}><li>Doctor List</li></div>
+            <div onClick={() => handleItemClick("employeelist")}><li>Employee List</li></div>
+            <div onClick={() => handleItemClick("roomlist")}><li>Room List</li></div>
         </ul>
       </div>
       <div className="content">{content}</div>

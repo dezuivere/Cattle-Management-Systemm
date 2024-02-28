@@ -60,7 +60,7 @@ const RoomsList = () => {
                 <img src={roomimg} alt="Cow" />
               </div>
               <div className="details-container">
-                <div>Room no: {selectedRoom.room_no}</div>
+                {/* <div>Room no: {selectedRoom.room_no}</div> */}
                 <div>Water Supply: {selectedRoom.water_supply}</div>
                 <div>Food Supply: {selectedRoom.food_supply}</div>
                 <div>Capacity: {selectedRoom.capacity}</div>

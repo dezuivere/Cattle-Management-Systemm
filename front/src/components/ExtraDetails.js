@@ -64,7 +64,6 @@ const ExtraDetails = () => {
             <div>Specialization: {doc.specialization}</div>
             <div>Hospital: {doc.hospital}</div>
             <br/>
-            <a href="/doctor_list"><button  className="header">other Doctors</button></a>
           </div>
         ))}
       </div>
@@ -83,7 +82,6 @@ const ExtraDetails = () => {
             <div>Salary: {caretaker.salary}</div>
             <div>Phone No: {caretaker.phone_no}</div>
             <br/>
-            <a href="/employee_list"><button  className="header">Other Employees</button></a>
           </div>
         ))}
       </div>
@@ -99,7 +97,6 @@ const ExtraDetails = () => {
             <div>Food Supply: {room.food_supply}</div>
             <div>Capacity: {room.capacity}</div>
             <br/>
-            <a href="/rooms_list"><button  className="header">other rooms</button></a>
           </div>
         ))}
       </div>

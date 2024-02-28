@@ -35,7 +35,7 @@ const EmployeeList = () => {
           <h2>EMPLOYEE LIST</h2>
         </div>
         <div className="test1" onClick={() => handleClick()}>
-          <button className="header">Add Employee</button>
+          <button className="header">+</button>
         </div>
       </div>
 
@@ -44,7 +44,7 @@ const EmployeeList = () => {
           <div key={employee.emp_id} className="employee-item" onClick={() => handleEmployeeClick(employee)}>
             <img src={employeeImg} alt="employee" />
             <div className="employee-info">
-              <div> ID: {employee.emp_id}</div>
+              {/* <div> ID: {employee.emp_id}</div> */}
               <div> Name: {employee.name}</div>
             </div>
           </div>
@@ -60,11 +60,11 @@ const EmployeeList = () => {
               <img src={employeeImg} alt="Cow" />
             </div>
             <div className="details-container">
-              <div>ID: {selectedEmployee.emp_id}</div>
+              {/* <div>ID: {selectedEmployee.emp_id}</div> */}
               <div>Name: {selectedEmployee.name}</div>
               <div>Age: {selectedEmployee.age}</div>
               <div>Adress: {selectedEmployee.address}</div>
-              <div>Salary ID: {selectedEmployee.salary}</div>
+              <div>Salary : {selectedEmployee.salary}</div>
               <div>Phone no: {selectedEmployee.phone_no}</div>
               {/* <div>
                 <button className="header" onClick={()=>getExtraDetails()}>Extra Details</button>
