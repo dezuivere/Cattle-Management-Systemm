@@ -58,7 +58,6 @@ const ExtraDetails = () => {
             </div>
         {cowDoc.map((doc, index) => (
           <div key={index}>
-            <div>Doctor ID: {doc.d_id}</div>
             <div>Name: {doc.name}</div>
             <div>Contact: {doc.contact}</div>
             <div>Specialization: {doc.specialization}</div>
@@ -75,7 +74,6 @@ const ExtraDetails = () => {
             </div>
         {cowCaretaker.map((caretaker, index) => (
           <div key={index}>
-            <div>Caretaker ID: {caretaker.emp_id}</div>
             <div>Name: {caretaker.name}</div>
             <div>Age: {caretaker.age}</div>
             <div>SAddress: {caretaker.address}</div>

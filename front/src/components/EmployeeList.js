@@ -41,8 +41,8 @@ const EmployeeList = () => {
 
       <div className="employee-container">
         {employees.map((employee) => (
-          <div key={employee.emp_id} className="employee-item" onClick={() => handleEmployeeClick(employee)}>
-            <img src={employeeImg} alt="employee" />
+          <div key={employee.emp_id} className="cow-item" onClick={() => handleEmployeeClick(employee)}>
+            <img className="emp_img" src={employeeImg} alt="employee" />
             <div className="employee-info">
               {/* <div> ID: {employee.emp_id}</div> */}
               <div> Name: {employee.name}</div>

@@ -46,3 +46,7 @@
     animation: colorChange 5s infinite;
     transition: transform 0.3s ease-in-out;
   }
+
+  .emp_img{
+    padding: 15px;
+  }

@@ -32,7 +32,7 @@ const CattleList = () => {
   return (
     <div className="cattle-list">
       <div className="cattle-head">
-        <div><h2>CATTLE LIST</h2></div>
+        <div><b><h2>CATTLE LIST</h2></b></div>
         <div className="test1" onClick={() => clickHandle()}>
           <button className="header">+</button>
         </div>
@@ -47,8 +47,8 @@ const CattleList = () => {
           >
             <img id="img" src={cow2} alt="Cow" />
             <div className="cow-info">
-              <div> Breed : {cow.breed}</div>
-              <div> price : {cow.price}</div>
+              <div><b>Breed</b>  : {cow.breed}</div>
+              <div><b>price :</b>  {cow.price}</div>
             </div>
           </div>
         ))}
@@ -61,17 +61,17 @@ const CattleList = () => {
             </div>
             <div className="details-container">
               {/* <div>ID: {(localStorage.getItem("selectedCow"))}</div> */}
-              <div>Age: {selectedCow.age}</div>
-              <div>Gender: {selectedCow.gender}</div>
-              <div>Health: {selectedCow.health}</div>
-              <div>Weight: {selectedCow.weight}</div>
-              <div>Color: {selectedCow.color}</div>
-              <div>Breed: {selectedCow.breed}</div>
-              <div>Birth Date: {selectedCow.birth_date}</div>
-              <div>Vaccination: {selectedCow.last_vaccination}</div>
-              <div>Price: {selectedCow.price}</div>
+              <div><b>Age:</b> {selectedCow.age}</div>
+              <div><b>Gender:</b> {selectedCow.gender}</div>
+              <div><b>Health:</b> {selectedCow.health}</div>
+              <div><b>Weight:</b> {selectedCow.weight}</div>
+              <div><b>Color:</b> {selectedCow.color}</div>
+              <div><b>Breed:</b> {selectedCow.breed}</div>
+              <div><b>Birth Date:</b> {selectedCow.birth_date}</div>
+              <div><b>Vaccination: </b>{selectedCow.last_vaccination}</div>
+              <div><b>Price:</b> {selectedCow.price}</div>
               <div>
-                <button className="header" onClick={()=>getExtraDetails()}>Extra Details</button>
+                <button className="header" onClick={()=>getExtraDetails()}><b>Extra Details</b></button>
               </div>
             </div>
           </div>

@@ -58,11 +58,11 @@ const AddCattle = () => {
   return (
     <div className="form-container">
       <div className="form-box">
-        <h2>Add Cattle</h2>
+        <b><h2>Add Cattle</h2></b>
         <form onSubmit={handleSubmit}>
           <div className="firstrow">
             <label>
-              Age*:
+              <b>Age*:</b>
               <input
                 type="number"
                 name="age"
@@ -72,7 +72,7 @@ const AddCattle = () => {
             </label>
 
             <label>
-              Gender:
+              <b>Gender:</b>
               <input
                 type="text"
                 name="gender"

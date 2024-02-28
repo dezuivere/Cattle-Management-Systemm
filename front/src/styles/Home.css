@@ -3,6 +3,8 @@
    
   }
 
+  
+
   button {
     height: 50px;
     background-color: black;
@@ -29,6 +31,17 @@
     flex: 1;
     background-color: rgb(95, 94, 94);
     padding: 20px;
+    animation: colorChange 5s infinite;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  @keyframes colorChange {
+    0%, 100% {
+      background-color: #76767b;
+    }
+    50% {
+      background-color: #000000;
+    }
   }
   
   .content {

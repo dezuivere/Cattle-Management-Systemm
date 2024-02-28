@@ -76,6 +76,7 @@ h2{
   background-color:rgb(252, 252, 252);
   height: 60vh;
   border-radius: 10px;
+  /* border: 2px solid black; */
 }
 
 .image-container {
@@ -91,6 +92,8 @@ h2{
 }
 
 .image-container img {
+  border-radius: 10px;
+  border:2px solid rgb(153, 154, 155);
   max-width: 100%;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

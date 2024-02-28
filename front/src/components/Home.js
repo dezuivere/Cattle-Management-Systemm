@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../styles/Home.css";
-import back from './back.jpg' 
 import CattleList from "./CattleList";
 import DoctorsList from "./DoctersList";
 import EmployeeList from "./EmployeeList";
