@@ -3,15 +3,15 @@
     position: relative;
     flex-direction: row;
     top: 30vh;
-    /* background-color: blue; */
-    /* width: 20vw; */
     justify-content: space-around;
+    
 }
 
 .extra-details{
     width: 20vw;
-    background-color: rgba(0, 0, 0, 0.601);
+    background-color:#7281d3;
     color: aliceblue;
     text-align: center;
     padding: 70px;
+    border-radius: 50px;
 }
