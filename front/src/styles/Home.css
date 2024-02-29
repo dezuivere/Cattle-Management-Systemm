@@ -81,3 +81,22 @@
     text-decoration: underline;
   }
   
+  .about-us-box {
+    background-color: #d6cdcd;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .about-us-box h2 {
+    color: rgb(49, 46, 46);
+    margin-bottom: 10px;
+    font-size: larger;
+  }
+  
+  .about-us-box p {
+    color: #666;
+    line-height: 1.5;
+  }
+  
