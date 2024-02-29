@@ -82,7 +82,7 @@ const AddCattle = () => {
             </label>
 
             <label>
-              Health:
+            <b>Health:</b>
               <input
                 type="text"
                 name="health"
@@ -92,7 +92,7 @@ const AddCattle = () => {
             </label>
 
             <label>
-              Caretaker ID:
+            <b>Caretaker ID:</b>
               <input
                 type="number"
                 name="caretaker_id"
@@ -104,7 +104,7 @@ const AddCattle = () => {
 
           <div className="secrow">
             <label>
-              Doctor ID:
+            <b>Doctor ID:</b>
               <input
                 type="number"
                 name="doc_id"
@@ -114,7 +114,7 @@ const AddCattle = () => {
             </label>
 
             <label>
-              Room Number:
+            <b>Room Number:</b>
               <input
                 type="number"
                 name="room_no"
@@ -124,7 +124,7 @@ const AddCattle = () => {
             </label>
 
             <label>
-              Weight:
+            <b>Weight:</b>
               <input
                 type="number"
                 name="weight"
@@ -134,7 +134,7 @@ const AddCattle = () => {
             </label>
 
             <label>
-              Color:
+            <b>Color:</b>
               <input
                 type="text"
                 name="color"
@@ -146,7 +146,7 @@ const AddCattle = () => {
 
           <div className="thirdrow">
             <label>
-              Breed:
+            <b>Breed:</b>
               <input
                 type="text"
                 name="breed"
@@ -156,7 +156,7 @@ const AddCattle = () => {
             </label>
 
             <label>
-              Date of Birth:
+            <b>Date of Birth:</b>
               <input
                 type="date"
                 name="last_vaccination"
@@ -166,7 +166,7 @@ const AddCattle = () => {
             </label>
 
             <label>
-              Last Vaccination:
+            <b>Last Vaccination:</b>
               <input
                 type="date"
                 name="last_vaccination"
@@ -176,7 +176,7 @@ const AddCattle = () => {
             </label>
 
             <label>
-              Price:
+            <b>Price:</b>
               <input
                 type="number"
                 name="price"

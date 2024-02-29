@@ -46,7 +46,7 @@ const AddDoctor = () => {
             <h2>Add Doctor</h2>
             <form onSubmit={handleSubmit}>
             <label>
-                  doctor id :
+                <b>doctor id :</b>
                   <input
                     type="number"
                     name="d_id"
@@ -55,7 +55,7 @@ const AddDoctor = () => {
                   />
                 </label>
                 <label>
-                  name :
+                <b>name :</b>
                   <input
                     type="text"
                     name="name"
@@ -65,7 +65,7 @@ const AddDoctor = () => {
                 </label>
     
                 <label>
-                  Contact :
+                <b>Contact :</b>
                   <input
                     type="text"
                     name="contact"
@@ -75,7 +75,7 @@ const AddDoctor = () => {
                 </label>
     
                 <label>
-                  Specialisation :
+                 <b> Specialisation :</b>
                   <input
                     type="text"
                     name="specialization"
@@ -85,7 +85,7 @@ const AddDoctor = () => {
                 </label>
     
                 <label>
-                  Hospital :
+                 <b> Hospital :</b>
                   <input
                     type="text"
                     name="hospital"

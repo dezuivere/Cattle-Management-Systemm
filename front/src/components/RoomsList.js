@@ -61,9 +61,9 @@ const RoomsList = () => {
               </div>
               <div className="details-container">
                 {/* <div>Room no: {selectedRoom.room_no}</div> */}
-                <div>Water Supply: {selectedRoom.water_supply}</div>
-                <div>Food Supply: {selectedRoom.food_supply}</div>
-                <div>Capacity: {selectedRoom.capacity}</div>
+                <div><b>Water Supply:</b> {selectedRoom.water_supply}</div>
+                <div><b>Food Supply:</b> {selectedRoom.food_supply}</div>
+                <div><b>Capacity:</b> {selectedRoom.capacity}</div>
               </div>
             </div>
           )}

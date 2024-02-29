@@ -64,10 +64,10 @@ const DoctersList = () => {
             </div>
             <div className="details-container">
               {/* <div>ID: {selectedDoctor.d_id}</div> */}
-              <div>Name: {selectedDoctor.name}</div>
-              <div>Contact: {selectedDoctor.contact}</div>
-              <div>Specialisation: {selectedDoctor.specialization}</div>
-              <div>Hospital : {selectedDoctor.hospital}</div>
+              <div><b>Name:</b> {selectedDoctor.name}</div>
+              <div><b>Contact:</b> {selectedDoctor.contact}</div>
+              <div><b>Specialisation:</b> {selectedDoctor.specialization}</div>
+              <div><b>Hospital :</b> {selectedDoctor.hospital}</div>
               {/* <div>
                 <button className="header" onClick={()=>getExtraDetails()}>Extra Details</button>
               </div> */}

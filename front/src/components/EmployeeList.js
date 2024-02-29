@@ -61,11 +61,11 @@ const EmployeeList = () => {
             </div>
             <div className="details-container">
               {/* <div>ID: {selectedEmployee.emp_id}</div> */}
-              <div>Name: {selectedEmployee.name}</div>
-              <div>Age: {selectedEmployee.age}</div>
-              <div>Adress: {selectedEmployee.address}</div>
-              <div>Salary : {selectedEmployee.salary}</div>
-              <div>Phone no: {selectedEmployee.phone_no}</div>
+              <div><b>Name:</b> {selectedEmployee.name}</div>
+              <div><b>Age: </b>{selectedEmployee.age}</div>
+              <div><b>Adress:</b> {selectedEmployee.address}</div>
+              <div><b>Salary : </b>{selectedEmployee.salary}</div>
+              <div><b>Phone no:</b> {selectedEmployee.phone_no}</div>
               {/* <div>
                 <button className="header" onClick={()=>getExtraDetails()}>Extra Details</button>
               </div> */}
