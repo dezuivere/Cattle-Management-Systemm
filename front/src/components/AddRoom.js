@@ -46,7 +46,7 @@ const AddRoom = () => {
         <h2>Add Room</h2>
         <form onSubmit={handleSubmit}>
           <label>
-            Room No:
+          <b>Room No:</b>
             <input
               type="number"
               name="room_no"
@@ -55,7 +55,7 @@ const AddRoom = () => {
             />
           </label>
           <label>
-            Water Supply(in litres):
+          <b>Water Supply(in litres):</b>
             <input
               type="number"
               name="water_supply"
@@ -64,7 +64,7 @@ const AddRoom = () => {
             />
           </label>
           <label>
-            Food Supply:
+          <b>Food Supply:</b>
             <input
               type="number"
               name="food_supply"
@@ -73,7 +73,7 @@ const AddRoom = () => {
             />
           </label>
           <label>
-            Capacity:
+            <b>Capacity:</b>
             <input
               type="number"
               name="capacity"

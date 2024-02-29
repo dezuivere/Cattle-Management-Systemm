@@ -50,7 +50,7 @@ const AddEmployee = () => {
         <h2>Add Employee</h2>
         <form onSubmit={handleSubmit}>
           <label>
-            Employee ID:
+          <b>Employee ID:</b>
             <input
               type="number"
               name="emp_id"
@@ -59,7 +59,7 @@ const AddEmployee = () => {
             />
           </label>
           <label>
-            Name:
+          <b>Name:</b>
             <input
               type="text"
               name="name"
@@ -68,7 +68,7 @@ const AddEmployee = () => {
             />
           </label>
           <label>
-            Age:
+          <b>Age:</b>
             <input
               type="number"
               name="age"
@@ -77,7 +77,7 @@ const AddEmployee = () => {
             />
           </label>
           <label>
-            Address:
+          <b>Address:</b>
             <input
               type="text"
               name="address"
@@ -86,7 +86,7 @@ const AddEmployee = () => {
             />
           </label>
           <label>
-            Salary:
+          <b>Salary:</b>
             <input
               type="number"
               name="salary"
@@ -95,7 +95,7 @@ const AddEmployee = () => {
             />
           </label>
           <label>
-            Phone Number:
+          <b>Phone Number:</b>
             <input
               type="number"
               name="phone_no"

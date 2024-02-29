@@ -58,10 +58,10 @@ const ExtraDetails = () => {
             </div>
         {cowDoc.map((doc, index) => (
           <div key={index}>
-            <div>Name: {doc.name}</div>
-            <div>Contact: {doc.contact}</div>
-            <div>Specialization: {doc.specialization}</div>
-            <div>Hospital: {doc.hospital}</div>
+            <div><b>Name:</b> {doc.name}</div>
+            <div><b>Contact: </b>{doc.contact}</div>
+            <div><b>Specialization:</b> {doc.specialization}</div>
+            <div><b>Hospital:</b> {doc.hospital}</div>
             <br/>
           </div>
         ))}
@@ -74,11 +74,11 @@ const ExtraDetails = () => {
             </div>
         {cowCaretaker.map((caretaker, index) => (
           <div key={index}>
-            <div>Name: {caretaker.name}</div>
-            <div>Age: {caretaker.age}</div>
-            <div>SAddress: {caretaker.address}</div>
-            <div>Salary: {caretaker.salary}</div>
-            <div>Phone No: {caretaker.phone_no}</div>
+            <div><b>Name:</b> {caretaker.name}</div>
+            <div><b>Age: </b>{caretaker.age}</div>
+            <div><b>SAddress:</b> {caretaker.address}</div>
+            <div><b>Salary: </b>{caretaker.salary}</div>
+            <div><b>Phone No:</b> {caretaker.phone_no}</div>
             <br/>
           </div>
         ))}
@@ -90,10 +90,10 @@ const ExtraDetails = () => {
             </div>
         {cowRoom.map((room, index) => (
           <div key={index}>
-            <div>Room No: {room.room_no}</div>
-            <div>Water Supply: {room.water_supply}</div>
-            <div>Food Supply: {room.food_supply}</div>
-            <div>Capacity: {room.capacity}</div>
+            <div><b>Room No:</b> {room.room_no}</div>
+            <div><b>Water Supply:</b> {room.water_supply}</div>
+            <div><b>Food Supply:</b> {room.food_supply}</div>
+            <div><b>Capacity:</b> {room.capacity}</div>
             <br/>
           </div>
         ))}
