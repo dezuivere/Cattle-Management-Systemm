@@ -68,6 +68,7 @@ const AddCattle = () => {
                 name="age"
                 value={formData.age}
                 onChange={handleChange}
+                required
               />
             </label>
 
@@ -78,6 +79,7 @@ const AddCattle = () => {
                 name="gender"
                 value={formData.gender}
                 onChange={handleChange}
+                required
               />
             </label>
 
@@ -88,6 +90,7 @@ const AddCattle = () => {
                 name="health"
                 value={formData.health}
                 onChange={handleChange}
+                required
               />
             </label>
 
@@ -98,6 +101,7 @@ const AddCattle = () => {
                 name="caretaker_id"
                 value={formData.caretaker_id}
                 onChange={handleChange}
+                required
               />
             </label>
           </div>
@@ -110,6 +114,7 @@ const AddCattle = () => {
                 name="doc_id"
                 value={formData.doc_id}
                 onChange={handleChange}
+                required
               />
             </label>
 
@@ -120,6 +125,7 @@ const AddCattle = () => {
                 name="room_no"
                 value={formData.room_no}
                 onChange={handleChange}
+                required
               />
             </label>
 
@@ -130,6 +136,7 @@ const AddCattle = () => {
                 name="weight"
                 value={formData.weight}
                 onChange={handleChange}
+                required
               />
             </label>
 
@@ -140,6 +147,7 @@ const AddCattle = () => {
                 name="color"
                 value={formData.color}
                 onChange={handleChange}
+                required
               />
             </label>
           </div>
@@ -152,6 +160,7 @@ const AddCattle = () => {
                 name="breed"
                 value={formData.breed}
                 onChange={handleChange}
+                required
               />
             </label>
 
@@ -162,6 +171,7 @@ const AddCattle = () => {
                 name="last_vaccination"
                 value={formData.last_vaccination}
                 onChange={handleChange}
+                required
               />
             </label>
 
@@ -172,6 +182,7 @@ const AddCattle = () => {
                 name="last_vaccination"
                 value={formData.last_vaccination}
                 onChange={handleChange}
+                required
               />
             </label>
 
@@ -182,11 +193,12 @@ const AddCattle = () => {
                 name="price"
                 value={formData.price}
                 onChange={handleChange}
+                required
               />
             </label>
           </div>
 
-          <button type="submit">Add Cattle</button>
+          <button type="submit"><b>submit</b></button>
         </form>
       </div>
     </div>

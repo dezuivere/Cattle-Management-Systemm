@@ -52,6 +52,7 @@ const AddRoom = () => {
               name="room_no"
               value={formData.room_no}
               onChange={handleChange}
+              required
             />
           </label>
           <label>
@@ -61,6 +62,7 @@ const AddRoom = () => {
               name="water_supply"
               value={formData.water_supply}
               onChange={handleChange}
+              required
             />
           </label>
           <label>
@@ -70,6 +72,7 @@ const AddRoom = () => {
               name="food_supply"
               value={formData.food_supply}
               onChange={handleChange}
+              required
             />
           </label>
           <label>
@@ -79,9 +82,10 @@ const AddRoom = () => {
               name="capacity"
               value={formData.capacity}
               onChange={handleChange}
+              required
             />
           </label>
-          <button type="submit">Add room</button>
+          <button type="submit"><b>submit</b></button>
         
         </form>
       </div>

@@ -53,6 +53,7 @@ body {
 
 .form-box button {
    /* align-items:flex-end; */
+   margin-left: 350px;
     width: 100px;
   padding: 5px 10px;
   margin-top: 10px;

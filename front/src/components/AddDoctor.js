@@ -52,6 +52,7 @@ const AddDoctor = () => {
                     name="d_id"
                     value={formData.d_id}
                     onChange={handleChange}
+                    required
                   />
                 </label>
                 <label>
@@ -61,6 +62,7 @@ const AddDoctor = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
+                    required
                   />
                 </label>
     
@@ -71,6 +73,7 @@ const AddDoctor = () => {
                     name="contact"
                     value={formData.contact}
                     onChange={handleChange}
+                    required
                   />
                 </label>
     
@@ -81,6 +84,7 @@ const AddDoctor = () => {
                     name="specialization"
                     value={formData.specialization}
                     onChange={handleChange}
+                    required
                   />
                 </label>
     
@@ -91,11 +95,12 @@ const AddDoctor = () => {
                     name="hospital"
                     value={formData.hospital}
                     onChange={handleChange}
+                    required
                   />
                 </label>
 
     
-              <button type="submit">Add doctor</button>
+              <button type="submit"><b>submit</b></button>
             </form>
           </div>
         </div>

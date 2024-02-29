@@ -54,6 +54,7 @@ body {
   }
   
   .employee-form-box button {
+    margin-left: 100px;
     width: 100px;
     padding: 5px 10px;
     margin-top: 10px;

@@ -56,6 +56,7 @@ const AddEmployee = () => {
               name="emp_id"
               value={formData.emp_id}
               onChange={handleChange}
+              required
             />
           </label>
           <label>
@@ -65,6 +66,7 @@ const AddEmployee = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
+              required
             />
           </label>
           <label>
@@ -74,6 +76,7 @@ const AddEmployee = () => {
               name="age"
               value={formData.age}
               onChange={handleChange}
+              required
             />
           </label>
           <label>
@@ -83,6 +86,7 @@ const AddEmployee = () => {
               name="address"
               value={formData.address}
               onChange={handleChange}
+              required
             />
           </label>
           <label>
@@ -92,6 +96,7 @@ const AddEmployee = () => {
               name="salary"
               value={formData.salary}
               onChange={handleChange}
+              required
             />
           </label>
           <label>
@@ -101,9 +106,10 @@ const AddEmployee = () => {
               name="phone_no"
               value={formData.phone_no}
               onChange={handleChange}
+              required
             />
           </label>
-          <button type="submit">Add Employee</button>
+          <button type="submit"><b>submit</b></button>
         </form>
       </div>
     </div>
