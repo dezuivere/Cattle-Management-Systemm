@@ -16,43 +16,48 @@ const Homepage = () => {
     <div className="about-us-box">
       <h2>About Us</h2>
       <p>
-        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-        finibus, nisi eu fermentum venenatis, augue elit mollis dolor, ut
-        condimentum quam tellus ac lacus. Vivamus in felis sit amet mi luctus
-        fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et
-        ultrices posuere cubilia curae; Sed quis velit nisl. Suspendisse
-        potenti. Aliquam erat volutpat. Sed posuere ac arcu vitae cursus. Fusce
-        vel dictum libero. Ut faucibus mi vitae mi accumsan, eget pulvinar neque
-        fermentum. Duis vitae elit justo. Ut ac nunc sit amet nulla eleifend
-        efficitur. Curabitur commodo, lacus vel tincidunt tristique, arcu velit
-        finibus lectus, sit amet bibendum mi eros a dui. Cras vehicula orci ut
-        tortor dictum, vitae malesuada lacus feugiat. Pellentesque nec
-        scelerisque ipsum. Sed non quam et sapien tincidunt vulputate. Nullam
-        elementum nunc nec est commodo, ac gravida urna posuere. Sed sed eros
-        malesuada, fermentum nisi sed, fringilla purus. Aenean ut sollicitudin
-        elit. Maecenas varius quam nec risus dictum fringilla. Etiam a eros
-        dictum, feugiat velit in, tempor odio. Donec vel erat non nisi eleifend
-        pharetra a nec risus. Curabitur feugiat purus et velit efficitur, a
-        varius dolor facilisis. Proin vehicula neque ac augue pulvinar faucibus.
-        Mauris venenatis, lacus a vehicula luctus, libero leo dignissim ligula,
-        vitae fermentum nunc mauris et odio. Sed eleifend, turpis ac tempus
-        feugiat, nisi eros tristique nulla, vitae pellentesque justo urna ac
-        mauris. Integer quis vestibulum justo. Phasellus non ligula eget nulla
-        eleifend egestas. Quisque in sem sed ex faucibus tincidunt ac id magna.
-        Ut id placerat tellus, eu molestie arcu. Integer accumsan, dolor non
-        elementum bibendum, lorem sem ultricies mi, vel consequat purus sem id
-        enim. Proin nec nunc sed dui efficitur vehicula at ut dui. Donec at eros
-        eget nisi malesuada scelerisque id eget mi. Nam lacinia nisi et nisi
-        posuere, nec cursus elit rutrum. Pellentesque habitant morbi tristique
-        senectus et netus et malesuada fames ac turpis egestas. Suspendisse
-        potenti. Maecenas et cursus enim. Cras at dolor ac turpis malesuada
-        varius nec et dolor. Ut a risus sed elit malesuada consectetur. Nam vel
-        ante est. Sed vel nisl id arcu congue vehicula. Donec euismod quam eget
-        ultrices convallis. Phasellus interdum augue ut feugiat fringilla. Duis
-        vitae turpis a erat dapibus elementum a sit amet mi. Vivamus elementum
-        nisi a nulla tempus</h2>
-        
-      </p>
+          Welcome to the Cattle Management System, your one-stop solution for efficient and organized management of your cattle farm. Our platform is designed to provide comprehensive details about your cattle, employees, and essential facilities, ensuring a seamless experience for farm owners.
+        </p>
+
+        <h3>Mission Statement</h3>
+        <p>
+          At Cattle Management System, our mission is to empower cattle farm owners with a user-friendly, feature-rich platform that simplifies the process of managing and monitoring their farms. We aim to enhance efficiency, promote transparency, and foster growth within the cattle farming community.
+        </p>
+
+        <h3>Features</h3>
+        <ol>
+          <li>
+            <strong>Comprehensive Information:</strong> Access all the essential details about your cattle, including unique cow IDs, caretaker information, doctor details, and allocated room numbers. Stay informed about the well-being of each cow under your care.
+          </li>
+          <li>
+            <strong>User-Friendly Interface:</strong> Our user interface is designed with simplicity in mind, making it easy for farm owners to navigate through varioussections such as customer details, cow details, room details, and more. Enjoy a hassle-free experience while managing your cattle farm.
+          </li>
+          <li>
+            <strong>Add New Entries:</strong> Easily add new cows, doctors, employees, and other relevant details to keep your farm records up-to-date. Our platform allows you to seamlessly integrate new additions to your cattle farm without any complications.
+          </li>
+          <li>
+            <strong>Customer Interaction:</strong> Enable potential customers to explore your cattle farm online. Visitors can log in as customers, view details of available cows, and even proceed with the purchase if interested. Facilitate a transparent and accessible process for potential buyers.
+          </li>
+        </ol>
+
+        <h3>The Creators</h3>
+        <p>
+          Cattle Management System was passionately crafted by Tanya and Shwetha, dedicated students of Sahyadri College of Engineering & Management. As aspiring engineers, we undertook this project with the aim of applying our knowledge and skills to contribute to the agricultural community. Our dedication to excellence and innovation drove us to create a solution tailored to meet the specific needs of cattle farm owners.
+        </p>
+
+        <h3>How to Get Started</h3>
+        <p>
+          Getting started with the Cattle Management System is quick and easy. Simply log in to your account,navigate through the various options, and explore the features tailored to meet your farm management needs. Whether you are a seasoned cattle farm owner or a newcomer to the industry, our platform is designed to simplify your experience.
+        </p>
+
+        <h3>Contact Us</h3>
+        <p>
+          Have questions, feedback, or suggestions? We value your input! Contact our support team at [support@cattlemanagementsystem.com] for assistance. Your success in managing your cattle farm is our priority.
+        </p>
+
+        <p>
+          Thank you for choosing Cattle Management System as your trusted partner in efficient cattle farm management!
+        </p>
     </div>
   );
   if (selected === "cattlelist") {
