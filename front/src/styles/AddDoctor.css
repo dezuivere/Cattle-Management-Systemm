@@ -24,7 +24,7 @@ body {
 .doctor-form-box {
   width: 300px;
   padding: 15px;
-  background-color: aliceblue;
+  background-color: rgb(127, 138, 147);
   border: 1px solid #000;
   border-radius: 5px;
 }

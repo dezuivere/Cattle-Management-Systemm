@@ -23,7 +23,7 @@ body {
 .form-box {
   width: 800px;
   padding: 15px;
-  background-color: aliceblue;
+  background-color: rgb(129, 132, 135);
   border: 1px solid #000;
   border-radius: 5px;
 }

@@ -24,7 +24,7 @@ body {
   .employee-form-box {
     width: 300px;
     padding: 15px;
-    background-color: aliceblue;
+    background-color: rgb(109, 117, 125);
     border: 1px solid #000;
     border-radius: 5px;
   }

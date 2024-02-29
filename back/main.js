@@ -14,6 +14,49 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const connection = require("./db.js");
 const { error } = require("console");
 
+// Routes
+
+app.post('/signup', (req, res) => {
+
+
+  const { username, email, password } = req.body;
+  const signUpSql = 'INSERT INTO signup (username, email, password) VALUES (?, ?, ?)';
+  connection.query(
+    signUpSql,
+    [username, email, password],
+    (err, result) => {
+      if (err) {
+        res.status(500).json({ error: err.message });
+        return;
+      }
+      res.json({ message: 'User signed up successfully' });
+    }
+  );
+});
+
+app.post('/login', (req, res) => {
+
+
+  const { username, password } = req.body;
+  const loginSql = 'SELECT * FROM signup WHERE username = ? AND password = ?';
+  connection.query(
+    loginSql,
+    [username, password],
+    (err, results) => {
+      if (err) {
+        res.status(500).json({ error: err.message });
+        return;
+      }
+      if (results.length > 0) {
+        res.json({ message: 'Login successful' });
+      } else {
+        res.status(401).json({ message: 'Invalid credentials' });
+      }
+    }
+  );
+});
+
+
 app.get("/", (req, res) => {
   const sql = `SELECT * FROM cattle;`;
   connection.query(sql, function (err, response) {
