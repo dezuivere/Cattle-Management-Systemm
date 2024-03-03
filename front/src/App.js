@@ -7,9 +7,11 @@ import AddEmployee from './components/AddEmployee';
 import ExtraDetails from './components/ExtraDetails';
 import AddRoom from './components/AddRoom';
 import Home from './components/Home';
-// import Mainpage from './components/Mainpage'
+import AdminLogin from './Aouth/AdminLogin'
 import Login from './Aouth/Login';
 import Signup from './Aouth/Signup';
+import AdminNotifications from './components/AdminNotification';
+
 
 const App = () => {
   return (
@@ -24,7 +26,8 @@ const App = () => {
         <Route element={<AddRoom/>} path='/add_room'/>
         <Route element={<Login/>} path='/'/>
         <Route element={<Signup/>} path='/signup'/>
-        
+        <Route element={<AdminLogin/>} path='/login'/>
+        <Route element={<AdminNotifications/>} path='/notify'/>
       </Routes>
     </BrowserRouter>
   </>

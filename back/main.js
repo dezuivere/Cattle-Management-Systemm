@@ -23,6 +23,51 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+app.post('/adminlogin', (req, res) => {
+  const sql = "SELECT * FROM admin WHERE `email` = ? AND `password` = ?";
+  const values = [req.body.email, req.body.password];
+
+  connection.query(sql, values, (err, data) => {
+    if (err) {
+      console.error("Error querying data:", err);
+      return res.json("Error");
+    }
+    if (data.length > 0) {
+      return res.json("Success");
+    } else {
+      return res.json("Fail");
+    }
+  });
+});
+
+// Endpoint to handle the purchase request
+app.post('/notifyAdmin', (req, res) => {
+  const { email, cowId } = req.body;
+  const message = `User with email ${email} wants to buy cow with ID ${cowId}`;
+
+  // Insert a new record into the notification table
+  connection.query('INSERT INTO notifications (message) VALUES (?)', [message], (error, results) => {
+    if (error) {
+      console.error('Error inserting notification:', error);
+      res.status(500).json({ error: 'Error inserting notification' });
+    } else {
+      res.status(200).json({ message: 'Notification sent to admin' });
+    }
+  });
+});
+
+// Endpoint to get notifications for the admin
+app.get('/notifications', (req, res) => {
+  connection.query('SELECT * FROM notifications', (error, results) => {
+    if (error) {
+      console.error('Error fetching notifications:', error);
+      res.status(500).json({ error: 'Error fetching notifications' });
+    } else {
+      res.status(200).json(results);
+    }
+  });
+});
+
 
 // app.post('/send-email', (req, res) => {
 //   const { user, item } = req.body;

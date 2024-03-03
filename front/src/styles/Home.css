@@ -113,5 +113,25 @@
     margin-left: 200px;
   }
 
+/* AdminNotifications.css */
+.notifications-container {
+  margin-top: 2px;
+}
+
+.notifications-heading {
+  font-size: 1.5rem;
+  margin-bottom: 1px;
+}
+
+.notification-item {
+  border: #333;
+  margin-bottom: 5px;
+  padding: 10px;
+  background-color: #a8a8a8;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
 
   

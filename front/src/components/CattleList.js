@@ -7,6 +7,7 @@ import cow2 from "./cow2.jpg";
 
 
 const CattleList = () => {
+  const isAdmin=localStorage.getItem("isAdmin")
   const [cattle, setCattle] = useState([]);
   const [selectedCow, setSelectedCow] = useState(null);
   function getExtraDetails() {
@@ -29,34 +30,26 @@ const CattleList = () => {
         console.error("Error fetching cattle data:", error);
       });
   }, []);
+  function handleBuy() {
+    const email = localStorage.getItem("loginData");
+    const cowId = selectedCow.cow_id;
 
-  const sendMail = async () => {
-    const email = localStorage.getItem('email'); // Fetch email from localStorage
-    try {
-        const response = await fetch('/sendmail', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                to: email,
-                subject: 'Test Email',
-                text: 'This is a test email sent from your Cattle Management System.'
-            })
-        });
-        const data = await response.json();
-        console.log('Email sent:', data);
-    } catch (error) {
-        console.error('Error sending email:', error);
-    }
-};
-
+    axios
+      .post("http://localhost:8080/notifyAdmin", { email, cowId })
+      .then((response) => {
+        alert("Purchase request sent to admin");
+      })
+      .catch((error) => {
+        console.error("Error sending purchase request:", error);
+      });
+  }
   return (
     <div className="cattle-list">
       <div className="cattle-head">
         <div><b><h2>CATTLE LIST</h2></b></div>
         <div className="test1" onClick={() => clickHandle()}>
-          <button className="header">+</button>
+          {/* <button className="header ">+</button> */}
+          <button className={`btn-small ${isAdmin ? '' : 'disabled'}`}>+</button>
         </div>
       </div>
 
@@ -94,7 +87,7 @@ const CattleList = () => {
               <div><b>Price:</b> {selectedCow.price}</div>
               <div>
                 <button className="header" onClick={()=>getExtraDetails()}><b>Extra Details</b></button>
-                <button onClick={sendMail}>Send Email</button>
+                <button className={`btn-small ${isAdmin ? 'disabled' : ''}`}onClick={handleBuy} >Buy</button>
               </div>
             </div>
           </div>

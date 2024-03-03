@@ -5,8 +5,8 @@ import axios from 'axios';
 import '../styles/main.css'
 
 function Login() {
-  const [loginData, setLoginData] = useState('');
-  const [loginPass, setLoginpass] = useState('');
+    const[isAdmin,setIsAdmin]=useState(false)
+    const[loginData,setLoginData]=useState('')
   const [values, setValues] = useState({
     email: '',
     password: '',
@@ -26,14 +26,15 @@ function Login() {
     setErrors(Validation(values));
 
     if (errors.email === '' && errors.password === '') {
-      axios.post('http://localhost:8080/login', values)
+      axios.post('http://localhost:8080/adminlogin', values)
         .then((res) => {
             console.log(res.data)
           if (res.data === 'Success') {
-            localStorage.setItem("loginData", values.email);
-            localStorage.setItem("loginpass", values.password);
-            localStorage.setItem('isAuthenticated', 'true');
+            setIsAdmin(true)
+            localStorage.setItem('isAdmin', 'true');
             setLoginData(values.email)
+            console.log(isAdmin)
+            console.log(loginData)
             navigate('/home', { state: { loginData: values.email } });
           } else {
             alert('No record exists');
@@ -45,8 +46,7 @@ function Login() {
 
   return (
     <div className="login-box">
-      <h6>User</h6>
-    <h6>Sign in to cattle.io</h6>
+      <h6>Admin</h6>
     <h2>Login</h2>
     <form className="login-form" onSubmit={handleSubmit}>
       <label htmlFor="login-email">Email</label>
@@ -70,9 +70,9 @@ function Login() {
       <button type="submit" className="home_button">
         Sign in
       </button>
-      <div className="forgot-password">
+      {/* <div className="forgot-password">
         <a href='/signup'>Create accout</a>
-      </div>
+      </div> */}
     </form>
   </div>
   );
