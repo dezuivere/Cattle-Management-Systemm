@@ -30,6 +30,7 @@ function Login() {
             console.log(res.data)
           if (res.data === 'Success') {
             localStorage.setItem("loginData", values.email);
+            localStorage.setItem('isAuthenticated', 'true');
             setLoginData(values.email)
             navigate('/home', { state: { loginData: values.email } });
           } else {

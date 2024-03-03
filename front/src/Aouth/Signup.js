@@ -26,7 +26,7 @@ function Signup() {
       axios
         .post("http://localhost:8080/signup", values)
         .then((res) => {
-          navigate("/login");
+          navigate("/");
         })
         .catch((err) => console.log(err));
     }
@@ -72,7 +72,7 @@ function Signup() {
           Register
         </button>
         <h6>
-          <a href="/login">Login</a>
+          <a href="/">Login</a>
         </h6>
       </form>
     </div>

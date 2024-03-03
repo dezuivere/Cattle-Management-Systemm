@@ -15,7 +15,7 @@ const Homepage = () => {
 
   function handleLogout() {
     localStorage.clear();
-    window.location.href = '/login'
+    window.location.href = '/'
   }
   let content = (
     <div className="about-us-box">
@@ -97,9 +97,7 @@ const Homepage = () => {
             <li>Room List</li>
           </div>
           <div>
-            
                 <button onClick={handleLogout}>Logout</button>
-            
           </div>
           
         </ul>
