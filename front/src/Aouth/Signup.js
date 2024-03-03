@@ -26,7 +26,7 @@ function Signup() {
       axios
         .post("http://localhost:8080/signup", values)
         .then((res) => {
-          navigate("/");
+          navigate("/home");
         })
         .catch((err) => console.log(err));
     }

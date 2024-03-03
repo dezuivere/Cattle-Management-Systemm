@@ -100,3 +100,18 @@
     line-height: 1.5;
   }
   
+  .btn{
+    width:350px;
+    
+  }
+
+  .disabled {
+    cursor: not-allowed;
+  }
+
+  .logt{
+    margin-left: 200px;
+  }
+
+
+  

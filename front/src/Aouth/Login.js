@@ -43,6 +43,7 @@ function Login() {
 
   return (
     <div className="login-box">
+      <h6>User</h6>
     <h6>Sign in to cattle.io</h6>
     <h2>Login</h2>
     <form className="login-form" onSubmit={handleSubmit}>

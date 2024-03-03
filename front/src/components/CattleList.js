@@ -30,17 +30,26 @@ const CattleList = () => {
       });
   }, []);
 
-  // const handleBuyClick = (user,item) => {
-  //   axios.post('http://localhost:8080/send-email', { user, item })
-  //     .then(response => {
-  //       console.log(response.data);
-  //       alert('Email sent to admin');
-  //     })
-  //     .catch(error => {
-  //       console.error(error);
-  //       alert('Error sending email');
-  //     });
-  // };
+  const sendMail = async () => {
+    const email = localStorage.getItem('email'); // Fetch email from localStorage
+    try {
+        const response = await fetch('/sendmail', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                to: email,
+                subject: 'Test Email',
+                text: 'This is a test email sent from your Cattle Management System.'
+            })
+        });
+        const data = await response.json();
+        console.log('Email sent:', data);
+    } catch (error) {
+        console.error('Error sending email:', error);
+    }
+};
 
   return (
     <div className="cattle-list">
@@ -85,7 +94,7 @@ const CattleList = () => {
               <div><b>Price:</b> {selectedCow.price}</div>
               <div>
                 <button className="header" onClick={()=>getExtraDetails()}><b>Extra Details</b></button>
-                {/* <button className="header" onClick={handleBuyClick("akshay",selectedCow)}><b>Buy Now</b></button> */}
+                <button onClick={sendMail}>Send Email</button>
               </div>
             </div>
           </div>
