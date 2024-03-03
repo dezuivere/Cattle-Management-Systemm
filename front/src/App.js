@@ -10,7 +10,6 @@ import Home from './components/Home';
 import AdminLogin from './Aouth/AdminLogin'
 import Login from './Aouth/Login';
 import Signup from './Aouth/Signup';
-import AdminNotifications from './components/AdminNotification';
 
 
 const App = () => {

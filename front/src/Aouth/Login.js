@@ -6,7 +6,6 @@ import '../styles/main.css'
 
 function Login() {
   const [loginData, setLoginData] = useState('');
-  const [loginPass, setLoginpass] = useState('');
   const [values, setValues] = useState({
     email: '',
     password: '',
@@ -33,6 +32,7 @@ function Login() {
             localStorage.setItem("loginData", values.email);
             localStorage.setItem("loginpass", values.password);
             localStorage.setItem('isAuthenticated', 'true');
+            console.log(loginData)
             setLoginData(values.email)
             navigate('/home', { state: { loginData: values.email } });
           } else {
