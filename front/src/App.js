@@ -11,7 +11,9 @@ import ExtraDetails from './components/ExtraDetails';
 import RoomsList from './components/RoomsList';
 import AddRoom from './components/AddRoom';
 import Home from './components/Home';
-import Mainpage from './components/Mainpage'
+// import Mainpage from './components/Mainpage'
+import Login from './Aouth/Login';
+import Signup from './Aouth/Signup';
 
 const App = () => {
   return (
@@ -25,10 +27,11 @@ const App = () => {
         <Route element={<DoctorList />} path='/doctor_list' />
         <Route element={<RoomsList/>} path='/rooms_list' />
         <Route element={<ExtraDetails />} path='/extra_details' />
-        <Route element={<EmployeeList/>} path='employee_list'/>
+        <Route element={<EmployeeList/>} path='/employee_list'/>
         <Route element={<AddEmployee/>} path='/add_employee'/>
         <Route element={<AddRoom/>} path='/add_room'/>
-        <Route element={<Mainpage/>} path='/'/>
+        <Route element={<Login/>} path='/login'/>
+        <Route element={<Signup/>} path='/signup'/>
         
       </Routes>
     </BrowserRouter>

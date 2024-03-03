@@ -4,16 +4,25 @@ import CattleList from "./CattleList";
 import DoctorsList from "./DoctersList";
 import EmployeeList from "./EmployeeList";
 import RoomsList from "./RoomsList";
+// import loginData from '../Aouth/Login'
 
 const Homepage = () => {
   const [selected, setSelected] = useState(null);
-
+  const loginData = localStorage.getItem("loginData");
   const handleItemClick = (item) => {
     setSelected(item);
   };
 
+  function handleLogout() {
+    localStorage.clear();
+    window.location.href = '/login'
+  }
   let content = (
     <div className="about-us-box">
+      <div>
+            <h1>Welcome to the home page</h1>
+            <p>Logged in as: {loginData}</p>
+        </div>
       <h2>About Us</h2>
       <p>
           Welcome to the Cattle Management System, your one-stop solution for efficient and organized management of your cattle farm. Our platform is designed to provide comprehensive details about your cattle, employees, and essential facilities, ensuring a seamless experience for farm owners.
@@ -87,8 +96,19 @@ const Homepage = () => {
           <div onClick={() => handleItemClick("roomlist")}>
             <li>Room List</li>
           </div>
+          <div>
+            
+                <button onClick={handleLogout}>Logout</button>
+            
+          </div>
+          
         </ul>
+
       </div>
+      <div>
+      
+            
+        </div>
       <div className="content">{content}</div>
     </div>
   );

@@ -51,6 +51,9 @@ const ExtraDetails = () => {
   });
   return (
     <div className="details-flex">
+      <a href="/home">
+        <button><b> back </b></button>
+      </a>
       <div className="extra-details">
         <h3>Doctor details</h3>
         <div className="image-container">

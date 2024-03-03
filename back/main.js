@@ -1,6 +1,7 @@
 const express = require("express");
 var mysql = require("mysql");
 // const fs = require('fs');
+const nodemailer = require('nodemailer');
 const cors = require("cors");
 const app = express();
 const bodyParser = require("body-parser");
@@ -12,48 +13,97 @@ app.use(bodyParser.json());
 // Parse application/x-www-form-urlencoded requests
 app.use(bodyParser.urlencoded({ extended: true }));
 const connection = require("./db.js");
-const { error } = require("console");
+// const { error } = require("console");
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'xxx@gmail.com',
+    pass: 'aS123456789'
+  }
+});
+
+
+// app.post('/send-email', (req, res) => {
+//   const { user, item } = req.body;
+//   const mailOptions = {
+//     from: 'xxx@gmail.com',
+//     to: 'shwetharao2003@gmail.com',
+//     subject: 'New Purchase',
+//     text: `User ${user.name} (${user.email}) has purchased item ${item.name}.`
+//   };
+
+//   transporter.sendMail(mailOptions, (error, info) => {
+//     if (error) {
+//       console.error(error);
+//       res.status(500).send('Error sending email');
+//     } else {
+//       console.log('Email sent: ' + info.response);
+//       res.send('Email sent');
+//     }
+//   });
+// });
 
 // Routes
 
 app.post('/signup', (req, res) => {
+  const sql = "INSERT INTO signup (`name`, `email`, `password`) VALUES (?, ?, ?)";
+  const values = [
+    req.body.name,
+    req.body.email,
+    req.body.password,
+  ];
 
-
-  const { username, email, password } = req.body;
-  const signUpSql = 'INSERT INTO signup (username, email, password) VALUES (?, ?, ?)';
-  connection.query(
-    signUpSql,
-    [username, email, password],
-    (err, result) => {
-      if (err) {
-        res.status(500).json({ error: err.message });
-        return;
-      }
-      res.json({ message: 'User signed up successfully' });
+  connection.query(sql, values, (err, data) => {
+    if (err) {
+      console.error("Error inserting data:", err);
+      return res.json("Error");
     }
-  );
+    console.log(data)
+    return res.json("Success");
+  });
 });
 
 app.post('/login', (req, res) => {
+  const sql = "SELECT * FROM signup WHERE `email` = ? AND `password` = ?";
+  const values = [req.body.email, req.body.password];
 
-
-  const { username, password } = req.body;
-  const loginSql = 'SELECT * FROM signup WHERE username = ? AND password = ?';
-  connection.query(
-    loginSql,
-    [username, password],
-    (err, results) => {
-      if (err) {
-        res.status(500).json({ error: err.message });
-        return;
-      }
-      if (results.length > 0) {
-        res.json({ message: 'Login successful' });
-      } else {
-        res.status(401).json({ message: 'Invalid credentials' });
-      }
+  connection.query(sql, values, (err, data) => {
+    if (err) {
+      console.error("Error querying data:", err);
+      return res.json("Error");
     }
-  );
+    if (data.length > 0) {
+      return res.json("Success");
+    } else {
+      return res.json("Fail");
+    }
+  });
+});
+
+app.post("/getData", async (req, res) => {
+  try {
+      const email = req.body.email;
+
+      // Execute the query to find a document based on the email
+      const query = `SELECT * FROM signup WHERE email = '${email}'`;
+      db.query(query, (err, result) => {
+          if (err) {
+              console.error("Error retrieving data:", err);
+              res.status(500).json({ message: "Internal server error" });
+          } else {
+              if (result.length > 0) {
+                  res.send({ data: result[0] }); // Send the found document as a response
+              } else {
+                  console.log("No document found for email:", email);
+                  res.send({ message: "No document found for email", status: 404 });
+              }
+          }
+      });
+  } catch (error) {
+      console.error("Error retrieving data:", error);
+      res.status(500).json({ message: "Internal server error" });
+  }
 });
 
 

@@ -5,6 +5,7 @@ import Modal from "./Modal";
 import cow1 from "./cow1.jpg";
 import cow2 from "./cow2.jpg";
 
+
 const CattleList = () => {
   const [cattle, setCattle] = useState([]);
   const [selectedCow, setSelectedCow] = useState(null);
@@ -28,6 +29,18 @@ const CattleList = () => {
         console.error("Error fetching cattle data:", error);
       });
   }, []);
+
+  // const handleBuyClick = (user,item) => {
+  //   axios.post('http://localhost:8080/send-email', { user, item })
+  //     .then(response => {
+  //       console.log(response.data);
+  //       alert('Email sent to admin');
+  //     })
+  //     .catch(error => {
+  //       console.error(error);
+  //       alert('Error sending email');
+  //     });
+  // };
 
   return (
     <div className="cattle-list">
@@ -72,6 +85,7 @@ const CattleList = () => {
               <div><b>Price:</b> {selectedCow.price}</div>
               <div>
                 <button className="header" onClick={()=>getExtraDetails()}><b>Extra Details</b></button>
+                {/* <button className="header" onClick={handleBuyClick("akshay",selectedCow)}><b>Buy Now</b></button> */}
               </div>
             </div>
           </div>
