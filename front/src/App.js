@@ -27,7 +27,6 @@ const App = () => {
         <Route element={<Login/>} path='/'/>
         <Route element={<Signup/>} path='/signup'/>
         <Route element={<AdminLogin/>} path='/login'/>
-        <Route element={<AdminNotifications/>} path='/notify'/>
       </Routes>
     </BrowserRouter>
   </>
