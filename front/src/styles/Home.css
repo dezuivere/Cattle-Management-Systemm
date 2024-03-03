@@ -82,11 +82,16 @@
   }
   
   .about-us-box {
+    padding:70px;
+    margin-top: 100px;
+    margin-left: 200px;
+    margin-right: 200px;
     background-color: #d6cdcd;
     border: 1px solid #ddd;
     border-radius: 5px;
-    padding: 20px;
     margin-bottom: 20px;
+    font-size: 1.3em; /* Adjust the font size as needed */
+    font-family: 'Courier New', Courier, monospace;
   }
   
   .about-us-box h2 {
@@ -99,6 +104,16 @@
     color: #666;
     line-height: 1.5;
   }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  
   
   .btn{
     width:350px;
