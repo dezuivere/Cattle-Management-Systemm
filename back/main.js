@@ -314,7 +314,7 @@ app.post("/get_room_specific_details", (req, res) => {
 
 //establishes connections
 app.listen(8080, () => {
-  console.log("port connected");
+  console.log("Server started at port 8080. Open in browser using localhost:8080");
   connection.connect(function (err) {
     if (err) throw err;
     console.log("Database coletions");
