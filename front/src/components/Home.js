@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/Home.css";
+import Typewriter from "typewriter-effect";
 import AdminNotifications from "./AdminNotification";
 import CattleList from "./CattleList";
 import DoctorsList from "./DoctersList";
@@ -23,17 +24,21 @@ const Homepage = () => {
 
   let content = (
     <div className="about-us-box">
-       <b>Hey there,</b> welcome to our Cattle Management System!
-      We're all about making farm life easier for you. Our platform is your
-      go-to for keeping track of everything on your cattle farm, from cow
-      details and employee info to room allocations. Want to add a new cow or
-      doctor? No problem, it's easy-peasy! Plus, potential customers can check
-      out your cows online and even make a purchase. We're Tanya and Shwetha,
-      two engineering students who are passionate about agriculture and
-      technology. We've created this platform to simplify farm management and
-      help you grow your business. So, log in, explore, and let us know if you
-      need any help along the way! Feel free to tweak the wording to better fit
-      your style and audience!
+      <p className="about_text">
+      <Typewriter
+        options={{
+          strings: [
+            'Hey there, welcome to our Cattle Management System! We\'re all about making farm life easier for you. Our platform is your go-to for keeping track of everything on your cattle farm, from cow details and employee info to room allocations. Want to add a new cow or doctor? No problem, it\'s easy-peasy! Plus, potential customers can check out your cows online and even make a purchase. We\'re Tanya and Shwetha, two engineering students who are passionate about agriculture and technology. We\'ve created this platform to simplify farm management and help you grow your business. So, log in, explore, and let us know if you need any help along the way!',
+            '',
+          ],
+          autoStart: true,
+          loop: true,
+          cursor: "𝗜",
+          delay: 50,
+          pauseFor: 50000,
+        }}
+      />
+    </p>
     </div>
   );
   if (selected === "cattlelist") {
