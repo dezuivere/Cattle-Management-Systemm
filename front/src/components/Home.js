@@ -24,6 +24,7 @@ const Homepage = () => {
 
   let content = (
     <div className="about-us-box">
+      <h2>AboutUS</h2>
       <p className="about_text">
       <Typewriter
         options={{
@@ -66,32 +67,28 @@ const Homepage = () => {
           </button>
           <br />
           <button
-            className={`btn ${isAdmin ? "" : "disabled"}`}
+            className="btn"
             onClick={() => handleItemClick("doctorlist")}
-            disabled={!isAdmin || isAuthenticated}
           >
             Doctors List
           </button>
           <br />
           <button
-            className={`btn ${isAdmin ? "" : "disabled"}`}
+            className="btn"
             onClick={() => handleItemClick("employeelist")}
-            disabled={!isAdmin || isAuthenticated}
           >
             Employee List
           </button>
           <br />
           <button
-            className={`btn ${isAdmin ? "" : "disabled"}`}
+            className="btn"
             onClick={() => handleItemClick("roomlist")}
-            disabled={!isAdmin || isAuthenticated}
           >
             Room List
           </button>
           <button
-            className={`btn ${isAdmin ? "" : "disabled"}`}
+           className="btn"
             onClick={() => handleItemClick("notify")}
-            disabled={!isAdmin || isAuthenticated}
           >
             notifications
           </button>

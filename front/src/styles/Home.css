@@ -31,16 +31,16 @@
     flex: 1;
     background-color: rgb(95, 94, 94);
     padding: 20px;
-    animation: colorChange 5s infinite;
+    animation: colorChangee 5s infinite;
     transition: transform 0.3s ease-in-out;
   }
 
-  @keyframes colorChange {
+  @keyframes colorChangee {
     0%, 100% {
-      background-color: #76767b;
+      background-color: #b4b4b8;
     }
     50% {
-      background-color: #000000;
+      background-color: #4f4949;
     }
   }
   
@@ -104,14 +104,7 @@
     color: #666;
     line-height: 1.5;
   }
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
+ 
   
   
   
@@ -147,6 +140,52 @@
   border-radius: 5px;
 }
 
+.btn-abt{
+  margin-bottom: 500px;
+}
 
 
   
+
+/* .about-us-box {
+  width: 700px;
+  height: 500px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin: 20px;
+} */
+
+.about-us-box h2 {
+  margin-top: 0;
+  color: #000000;
+}
+
+.about-us-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-us-box label {
+  margin-top: 10px;
+}
+
+.about-us-box input,
+.about-us-box textarea {
+  padding: 5px;
+  margin-top: 5px;
+  width: 500px;
+}
+
+.about-us-box button {
+  width: auto;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #333;
+  color: rgb(9, 8, 8);
+  border: none;
+  cursor: pointer;
+}
+
+.about-us-box button:hover {
+  background-color: #555;
+}

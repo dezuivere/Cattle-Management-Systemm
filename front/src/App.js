@@ -10,6 +10,7 @@ import Home from './components/Home';
 import AdminLogin from './Aouth/AdminLogin'
 import Login from './Aouth/Login';
 import Signup from './Aouth/Signup';
+import Userpage from './components/Userpage';
 
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
         <Route element={<Login/>} path='/'/>
         <Route element={<Signup/>} path='/signup'/>
         <Route element={<AdminLogin/>} path='/login'/>
+        <Route element={<Userpage/>} path='/user'/>
       </Routes>
     </BrowserRouter>
   </>
