@@ -25,8 +25,8 @@ const App = () => {
 
           <Route element={<CheckLogin />}>
             <Route element={<HomePage />} path="/" />
+            <Route element={<ExtraDetails />} path="/extra_details" />
             <Route element={<AdminAuth />}>
-              <Route element={<ExtraDetails />} path="/extra_details" />
               {
                 console.log("first in app")
               }
