@@ -35,12 +35,12 @@ app.post("/adminlogin", (req, res) => {
 // Endpoint to handle the purchase request
 app.post("/notifyAdmin", (req, res) => {
   const { email, cowId } = req.body;
-  const message = `User with email ${email} wants to buy cow with ID ${cowId}`;
+  // const message = `User with email ${email} wants to buy cow with ID ${cowId}`;
 
   // Insert a new record into the notification table
   connection.query(
-    "INSERT INTO notifications (message) VALUES (?)",
-    [message],
+    "INSERT INTO notifications (email,cow_id) VALUES (?,?)",
+    [email,cowId],
     (error, results) => {
       if (error) {
         console.error("Error inserting notification:", error);

@@ -28,7 +28,9 @@ const AdminNotifications = () => {
         console.error("Error fetching notifications:", error);
       });
   }, []);
-
+  useEffect(()=>{
+    console.log(notifications)
+  },[notifications])
   return (
     <div className="notifications-container">
     <h2 className="notifications-heading">Admin Notifications</h2>
