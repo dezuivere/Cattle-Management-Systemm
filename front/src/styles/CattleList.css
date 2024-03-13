@@ -42,7 +42,7 @@
   background-color: #3b3b3b;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   /* animation: colorChange 5s infinite;   */
-  transition: all s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 @keyframes colorChange {
@@ -73,20 +73,20 @@ h2 {
   background-color: rgb(252, 252, 252);
   /* height: 60vh; */
   border-radius: 10px;
-  padding-left: 10%;
-  padding-top: 10%;
-  padding-bottom: 10%;
+  padding: 10%;
+  gap: 5vw;
   /* border: 2px solid black; */
 }
 
 .image-container {
   flex: 2;
-  margin-right: 20px; /* Add spacing between image and details */
+  /* margin-right: 20px; Add spacing between image and details */
 }
 
 .details-container {
   flex: 2; /* Take up two-thirds of the width */
   margin: 20px;
+  text-align: left;
 }
 
 .image-container img {
