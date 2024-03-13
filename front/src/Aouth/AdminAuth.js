@@ -6,7 +6,7 @@ const AdminAuth = () => {
   const login = localStorage.getItem("loginData");
   console.log(login)
   return login ? (
-    auth == 1 ? (
+    auth === 1 ? (
       <Outlet />
     ) : (
       <Navigate to="/" />
