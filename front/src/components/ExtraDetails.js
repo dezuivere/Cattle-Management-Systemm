@@ -26,7 +26,7 @@ const ExtraDetails = () => {
       setCowDoc(response.data);
     };
     callCowDoc();
-  }, []);
+  },[cowDoc]);
   useEffect(() => {
     const callCowCaretaker = async () => {
       const response = await axios.post(
@@ -38,7 +38,7 @@ const ExtraDetails = () => {
       setCowCaretaker(response.data);
     };
     callCowCaretaker();
-  }, []);
+  },[cowCaretaker]);
   useEffect(() => {
     const callCowRoom = async () => {
       const response = await axios.post(
@@ -50,7 +50,7 @@ const ExtraDetails = () => {
       setCowRoom(response.data);
     };
     callCowRoom();
-  }, []);
+  },[cowRoom]);
   function handleBack() {
     window.history.back();
   }
