@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Home from "./Home";
 import Userpage from "./Userpage";
 
 const HomePage = () => {
-  const auth = null;
+  const [auth,getAuth] = useState(0);
   console.log("first")
   useEffect(() => {
-    auth = localStorage.getItem("auth");
+    getAuth(localStorage.getItem("auth"))
     console.log(auth);
-  });
-  return <>{auth === 1 ? <Home /> : <Userpage />}</>;
+  },[auth]);
+  return <>{auth == 1 ? <Home /> : <Userpage />}</>;
 };
 
 export default HomePage;

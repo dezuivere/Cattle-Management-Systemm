@@ -12,9 +12,6 @@ function Login() {
   });
 
   const navigate = useNavigate();
-  const [errors, setErrors] = useState({});
-  
-
 
   const handleInput = (event) => {
     setValues((prev) => ({ ...prev, [event.target.name]: event.target.value }));
@@ -22,19 +19,31 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setErrors(Validation(values));
-
-    if (errors.email === '' && errors.password === '') {
+    const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
+    const emailValid = email_pattern.test(values.email)
+    const passValid = password_pattern.test(values.password)
+    console.log(emailValid,passValid)
+    if (!values.email||!values.password){
+      return alert("Enter all the data");
+    }
+    if (!emailValid){
+      return alert("Invalid Email")
+    }
+    if (!passValid){
+      return alert("Invalid Password")
+    }
+    if (emailValid && passValid) {
       axios.post('http://localhost:8080/login', values)
         .then((res) => {
+            console.log(res.data,"Recieved Message")
+          if (res.data.data) {
             console.log(res.data)
-          if (res.data) {
-            localStorage.setItem("loginData", res.data[0].email);
-            localStorage.setItem("auth", res.data[0].isadmin);
-            // localStorage.setItem("loginpass", res.data[0].password);
-            const auth = res.data[0].isadmin;
-            console.log(loginData)
-            setLoginData(values.email)
+            localStorage.setItem("loginData", res.data.data.email);
+            localStorage.setItem("auth", res.data.data.isadmin);
+            const auth = res.data.data.isadmin;
+            setLoginData(res.data.data.email)
+            console.log(loginData,auth)
               navigate('/');
           } else {
             alert('No record exists');
@@ -59,7 +68,7 @@ function Login() {
         name="email"
         onChange={handleInput}
         required />
-         {errors.email && <span className='text-danger'>{errors.email}</span>}
+
       <label htmlFor="login-password">Password</label>
       <input
         className="input_signup"
@@ -68,7 +77,6 @@ function Login() {
         name="password"
         onChange={handleInput}
         required />
-        {errors.password && <span className='text-danger'>{errors.password}</span>}
       <button type="submit" className="home_button">
         Sign in
       </button>
