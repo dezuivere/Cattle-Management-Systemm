@@ -11,6 +11,7 @@ import Signup from "./Aouth/Signup";
 import AdminAuth from "./Aouth/AdminAuth";
 import HomePage from "./components/HomePage";
 import LoginAuth from "./Aouth/LoginAuth";
+import CheckLogin from "./Aouth/CheckLogin";
 
 const App = () => {
   return (
@@ -21,15 +22,21 @@ const App = () => {
             <Route element={<Login />} path="/login" />
             <Route element={<Signup />} path="/signup" />
           </Route>
-          {/* <Route element={<AdminLogin/>} path='/login'/> */}
-          <Route element={<AdminAuth />}>
-            <Route element={<ExtraDetails />} path="/extra_details" />
+
+          <Route element={<CheckLogin />}>
             <Route element={<HomePage />} path="/" />
-            <Route element={<AddDoctor />} path="/add_doctor" />
-            <Route element={<AddCattleForm />} path="/add_Cattle" />
-            <Route element={<AddEmployee />} path="/add_employee" />
-            <Route element={<AddRoom />} path="/add_room" />
+            <Route element={<AdminAuth />}>
+              <Route element={<ExtraDetails />} path="/extra_details" />
+              {
+                console.log("first in app")
+              }
+              <Route element={<AddDoctor />} path="/add_doctor" />
+              <Route element={<AddCattleForm />} path="/add_Cattle" />
+              <Route element={<AddEmployee />} path="/add_employee" />
+              <Route element={<AddRoom />} path="/add_room" />
+            </Route>
           </Route>
+
         </Routes>
       </BrowserRouter>
     </>

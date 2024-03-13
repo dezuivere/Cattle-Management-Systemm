@@ -88,13 +88,14 @@ app.post("/login", (req, res) => {
   connection.query(sql, values, (err, data) => {
     if (err) {
       console.error("Error querying data:", err);
-      return res.json("Error");
+      return res.send({data:null,message:"Failed"});
     }
     if (data.length > 0) {
       console.log(data[0]);
-      return res.send(data);
+      return res.send({data:data[0],message:"Success"});
     } else {
-      return res.json("Fail");
+      console.log("FAILED")
+      return res.send({data:null,message:"Failed"});
     }
   });
 });

@@ -20,13 +20,24 @@ function Signup() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setErrors(Validation(values));
-
-    if (!errors.name && !errors.email && !errors.password) {
+    const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
+    const emailValid = email_pattern.test(values.email)
+    const passValid = password_pattern.test(values.password)
+    if (!values.email || !values.password || !values.name) {
+      return alert("Enter all the data");
+    }
+    if (!emailValid) {
+      return alert("Invalid Email")
+    }
+    if (!passValid) {
+      return alert("Invalid Password")
+    }
+    if (emailValid&&passValid) {
       axios
         .post("http://localhost:8080/signup", values)
         .then((res) => {
-          navigate("/home");
+          navigate("/");
         })
         .catch((err) => console.log(err));
     }

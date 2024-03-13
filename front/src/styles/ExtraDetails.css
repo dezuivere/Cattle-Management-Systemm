@@ -2,19 +2,26 @@
     display: flex;
     position: relative;
     flex-direction: row;
-    top: 30vh;
+    /* top: 30vh; */
     justify-content: space-around;
     
 }
-
+.extra-button{
+  /* display: flex;
+  flex-direction: column;
+  width: auto; */
+  position: fixed;
+  left: 0;
+}
 .extra-details{
     width: 20vw;
-    background-color:rgb(74, 72, 72);
+    background-color:rgba(0, 0, 0, 0.671);
     color: aliceblue;
     text-align: center;
     padding: 50px;
+    margin-top: 10vh;
     border-radius: 50px;
-    animation: colorChange 5s infinite;
+    /* animation: colorChange 5s infinite; */
     transition: transform 0.3s ease-in-out;
 }
 

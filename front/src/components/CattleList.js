@@ -7,7 +7,7 @@ import cow2 from "./cow2.jpg";
 
 
 const CattleList = () => {
-  const isAdmin=localStorage.getItem("isAdmin")
+  const isAdmin = localStorage.getItem("isAdmin")
   const [cattle, setCattle] = useState([]);
   const [selectedCow, setSelectedCow] = useState(null);
   function getExtraDetails() {
@@ -15,7 +15,7 @@ const CattleList = () => {
   }
   const handleCowClick = (cow) => {
     setSelectedCow(cow);
-    localStorage.setItem("selectedCow",cow.cow_id);
+    localStorage.setItem("selectedCow", cow.cow_id);
   };
   function clickHandle() {
     window.location.href = "/add_cattle";
@@ -49,7 +49,7 @@ const CattleList = () => {
         <div><b><h2>CATTLE LIST</h2></b></div>
         <div className="test1" onClick={() => clickHandle()}>
           {/* <button className="header ">+</button> */}
-          <button className={`btn-small ${isAdmin ? '' : 'disabled'}`}>+</button>
+          <button className={`btn-small`}>+</button>
         </div>
       </div>
 
@@ -86,8 +86,8 @@ const CattleList = () => {
               <div><b>Vaccination: </b>{selectedCow.last_vaccination}</div>
               <div><b>Price:</b> {selectedCow.price}</div>
               <div className="button-last">
-                <button className="button" onClick={()=>getExtraDetails()}><b>Extra Details</b></button>
-                <button className={`button ${isAdmin ? 'disabled' : ''}`}onClick={handleBuy} >Buy</button>
+                <button className="button" onClick={() => getExtraDetails()}><b>Extra Details</b></button>
+                <button className={`button ${isAdmin ? 'disabled' : ''}`} onClick={handleBuy} >Buy</button>
               </div>
             </div>
           </div>

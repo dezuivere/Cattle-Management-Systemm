@@ -5,7 +5,9 @@
 body{
   margin: 0;
 }
-
+.homepage-home-button{
+  cursor: pointer;
+}
 button {
   height: 50px;
   background-color: black;
@@ -119,10 +121,6 @@ a:hover {
   cursor: not-allowed;
 }
 
-.logt {
-  /* margin-left: 200px; */
-}
-
 /* AdminNotifications.css */
 .notifications-container {
   margin-top: 2px;
@@ -190,9 +188,6 @@ a:hover {
   background-color: #555;
 }
 
-.bn{
-  /* margin-left: 300px; */
-}
 
 
 

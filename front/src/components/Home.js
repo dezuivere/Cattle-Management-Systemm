@@ -6,9 +6,10 @@ import CattleList from "./CattleList";
 import DoctorsList from "./DoctersList";
 import EmployeeList from "./EmployeeList";
 import RoomsList from "./RoomsList";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate()
   const location = useLocation();
   const [selected, setSelected] = useState(null);
   var loginData = localStorage.getItem("loginData");
@@ -58,11 +59,13 @@ const Home = () => {
   if (isAdmin === true) {
     loginData = "Admin";
   }
-
+  function clickHome() {
+    window.location.href = "/";
+  }
   return (
     <>
       <div className="sidebar">
-        <h1>Cattle.io</h1>
+        <h1 className="homepage-home-button" onClick={clickHome}>Cattle.io</h1>
         {/* <ul> */}
         <button className="btn" onClick={() => handleItemClick("cattlelist")}>
           Cattle List
