@@ -2,25 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import '../styles/Home.css';
 
-const AdminNotifications = () => {
+const UserNotifications = () => {
   const [notifications, setNotifications] = useState([]);
-  function handleAccept() {
-    const email = localStorage.getItem("loginData");
-    const cowId = 1;
-
-    axios
-      .post("http://localhost:8080/notifyAdmin", { email, cowId })
-      .then((response) => {
-        alert("confirm notification sent to user");
-      })
-      .catch((error) => {
-        console.error("Error sending purchase request:", error);
-      });
-  }
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/notifications")
+      .get("http://localhost:8080/usernotifications")
       .then((response) => {
         setNotifications(response.data);
       })
@@ -35,7 +22,7 @@ const AdminNotifications = () => {
     <ul>
       {notifications.map((notification, index) => (
         <li key={index} className="notification-item">
-          {notification.message}<button onClick={handleAccept}>accept</button>
+          {notification.message}
         </li>
       ))}
     </ul>
@@ -43,4 +30,4 @@ const AdminNotifications = () => {
   );
 };
 
-export default AdminNotifications;
+export default UserNotifications;

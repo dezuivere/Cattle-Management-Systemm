@@ -1,15 +1,14 @@
-
 .cattle-list {
- 
+  transition: all 1s ease;
   margin: 0 auto;
   padding: 20px;
 }
 
-.test1{
+.test1 {
   cursor: pointer;
 }
 
-.header{
+.header {
   text-align: center;
   text-decoration: none;
   padding: 6px 10px;
@@ -18,19 +17,19 @@
   border: 2px solid #1d1f20;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  transition: all 0.3s ease;
 }
-.cattle-head{
- 
+.cattle-head {
   display: flex;
   flex-direction: row;
   color: white;
-  justify-content:space-between;
+  justify-content: space-between;
 }
 
 .cattle-container {
   display: flex;
   flex-wrap: wrap;
+  transition: all 1s ease;
   /* justify-content: space-around; */
 }
 
@@ -40,14 +39,15 @@
   border-radius: 10px;
   text-align: center;
   color: #fff;
-  background-color: #4b0082;
+  background-color: #3b3b3b;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  animation: colorChange 5s infinite;
-  transition: transform 0.3s ease-in-out;
+  /* animation: colorChange 5s infinite;   */
+  transition: all s ease-in-out;
 }
 
 @keyframes colorChange {
-  0%, 100% {
+  0%,
+  100% {
     background-color: #76767b;
   }
   50% {
@@ -57,13 +57,10 @@
 
 .cow-item:hover {
   transform: scale(1.05);
+  background-color: black;
 }
 
-
-
-
-
-h2{
+h2 {
   color: rgb(6, 6, 6);
 }
 .cattle-list {
@@ -73,58 +70,67 @@ h2{
 .cow-details {
   display: flex;
   align-items: center; /* Align items vertically */
-  background-color:rgb(252, 252, 252);
-  height: 60vh;
+  background-color: rgb(252, 252, 252);
+  /* height: 60vh; */
   border-radius: 10px;
+  padding-left: 10%;
+  padding-top: 10%;
+  padding-bottom: 10%;
   /* border: 2px solid black; */
 }
 
 .image-container {
   flex: 2;
   margin-right: 20px; /* Add spacing between image and details */
-  margin-left: 20px;
 }
 
 .details-container {
   flex: 2; /* Take up two-thirds of the width */
-  margin-left: 20px;
-  
+  margin: 20px;
 }
 
 .image-container img {
   border-radius: 10px;
-  border:2px solid rgb(153, 154, 155);
+  border: 2px solid rgb(153, 154, 155);
   max-width: 100%;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#img{
+#img {
   /* flex: 1; */
-    max-width:85%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-  }
+  max-width: 85%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 10%;
+  border-radius: 20px;
+}
 
-  .button {
-    text-align: center;
-    text-decoration: none;
-    padding: 6px 10px;
-    color: #ffffff;
-    background-color: #151616;
-    border: 2px solid #232528;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-  }
-  
-  .button:hover {
-    background-color: #191a1b;
-    border-color: #1f2020;
-  }
-  
-  .button:active {
-    background-color: #040404;
-    border-color: #0e0f0f;
-  }
-  
+.button {
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 6px 10px;
+  color: #ffffff;
+  background-color: #151616;
+  border: 2px solid #232528;
+  border-radius: 5px;
+  cursor: pointer;  
+  transition: all 0.5s ease;
+}
+
+.button:hover {
+  background-color: #4a4a4a;
+  border-color: #1f2020;
+}
+
+.button:active {
+  background-color: #040404;
+  border-color: #0e0f0f;
+}
+.button-last{
+  display: flex;
+  gap: 5%;
+  flex-direction: row;
+  /* width: 50%; */
+  padding-top: 5%;
+}

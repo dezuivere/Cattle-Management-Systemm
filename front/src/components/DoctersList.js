@@ -1,4 +1,4 @@
-import "../styles/DoctorList.css";
+import "../styles/CattleList.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import doc from "./doc1.jpg";

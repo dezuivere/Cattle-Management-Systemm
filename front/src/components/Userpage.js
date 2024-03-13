@@ -2,26 +2,41 @@ import React, { useState } from "react";
 import "../styles/Home.css";
 import Typewriter from "typewriter-effect";
 import CattleList from "./CattleList";
+import { useLocation } from "react-router-dom";
 
-const Homepage = () => {
+const Userpage = () => {
+  const location = useLocation();
   const [selected, setSelected] = useState(null);
   var loginData = localStorage.getItem("loginData");
-  const isAdmin = localStorage.getItem("isAdmin") === "true";
 
   const handleItemClick = (item) => {
     setSelected(item);
   };
 
-  const handle = (item) => {
-    setSelected(item);
+  const handle = (event) => {
+    event.preventDefault(); // Prevent the default form submission
+    const form = event.target.closest("form"); // Find the closest form element
+    if (!form) return; // If form not found, do nothing
+    const formData = new FormData(form); // Use the form element to create FormData
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const message = formData.get("message");
+
+    console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
+
+    form.reset(); // Reset the form fields
   };
 
   function handleLogout() {
     localStorage.clear();
-    window.location.href = "/";
+    window.location.href = "/login";
   }
 
-  let content = <CattleList />;
+  let content = (
+    <div>
+      <CattleList />
+    </div>
+  );
   if (selected === "about") {
     content = (
       <div className="about-us-box">
@@ -43,54 +58,66 @@ const Homepage = () => {
         </p>
       </div>
     );
-  }else if(selected==="contact"){
+  } else if (selected === "contact") {
     content = (
-        <div className="about-us-box">
+      <div className="about-us-box">
         <h2>Contact Us</h2>
         <form>
-          <label htmlFor="name">Name:</label><br />
-          <input type="text" id="name" name="name" /><br />
-          <label htmlFor="email">Email:</label><br />
-          <input type="email" id="email" name="email" /><br />
-          <label htmlFor="message">Message:</label><br />
-          <textarea id="message" name="message" rows="4" /><br />
-          <button onClick={handle} type="submit">Submit</button>
+          <label htmlFor="name">Name:</label>
+          <br />
+          <input type="text" id="name" name="name" />
+          <br />
+          <label htmlFor="email">Email:</label>
+          <br />
+          <input type="email" id="email" name="email" />
+          <br />
+          <label htmlFor="message">Message:</label>
+          <br />
+          <textarea id="message" name="message" rows="4" />
+          <br />
+          <button className="btn" onClick={handle} type="submit">
+            Submit
+          </button>
         </form>
       </div>
-      );
-  }
-
-
-  if (isAdmin === true) {
-    loginData = "Admin";
+    );
+  } else if (selected === "cattle") {
+    content = <CattleList />;
   }
 
   return (
-    <div className="container">
+    <>
       <div className="sidebar">
-        <h1>Cattle.io</h1>
-        <ul>
-          <button className="btn" onClick={() => handleItemClick("about")}>
-            Aboutt   
-          </button>
-          <br />
-          <button className="btn btn-abt" onClick={() => handleItemClick("contact")}>
-            contact
-          </button>
-          <br />
-          <div className="login-info">
-            <p>
-              <b>Logged in as: {loginData}</b>
-            </p>
-            <button className="logt" onClick={handleLogout}>
-              Logout
-            </button>
-          </div>
-        </ul>
+        <h1 onClick={() => handleItemClick("about")}>Cattle.io</h1>
+        {/* <ul> */}
+        <button className="btn" onClick={() => handleItemClick("cattle")}>
+          Cattles
+        </button>
+        <br />
+        <button className="btn" onClick={() => handleItemClick("about")}>
+          About
+        </button>
+        <br />
+        <button className="btn " onClick={() => handleItemClick("contact")}>
+          contact
+        </button>
+        <br />
+        <h2>Logged in as : {loginData} </h2>
+        <button className="btn-logout" onClick={handleLogout}>
+          Logout
+        </button>
+        {/* </ul> */}
       </div>
-      <div className="content">{content}</div>
-    </div>
+      <div className="container">
+        <div className="content">
+          {content}
+          {/* <footer className="footer">
+          <p>&copy; 2022 Cattle.io. All Rights Reserved.</p>
+        </footer> */}
+        </div>
+      </div>
+    </>
   );
 };
 
-export default Homepage;
+export default Userpage;

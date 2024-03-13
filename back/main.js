@@ -56,9 +56,23 @@ app.post('/notifyAdmin', (req, res) => {
   });
 });
 
+
+
 // Endpoint to get notifications for the admin
 app.get('/notifications', (req, res) => {
   connection.query('SELECT * FROM notifications', (error, results) => {
+    if (error) {
+      console.error('Error fetching notifications:', error);
+      res.status(500).json({ error: 'Error fetching notifications' });
+    } else {
+      res.status(200).json(results);
+    }
+  });
+});
+
+// Endpoint to get user notifications for the admin
+app.get('/usernotifications', (req, res) => {
+  connection.query('SELECT * FROM usernotifications', (error, results) => {
     if (error) {
       console.error('Error fetching notifications:', error);
       res.status(500).json({ error: 'Error fetching notifications' });
@@ -112,14 +126,15 @@ app.post('/signup', (req, res) => {
 app.post('/login', (req, res) => {
   const sql = "SELECT * FROM signup WHERE `email` = ? AND `password` = ?";
   const values = [req.body.email, req.body.password];
-
+  console.log(values)
   connection.query(sql, values, (err, data) => {
     if (err) {
       console.error("Error querying data:", err);
       return res.json("Error");
     }
     if (data.length > 0) {
-      return res.json("Success");
+      console.log(data[0]); 
+      return res.send(data);
     } else {
       return res.json("Fail");
     }

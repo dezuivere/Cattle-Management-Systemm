@@ -85,9 +85,9 @@ const CattleList = () => {
               <div><b>Birth Date:</b> {selectedCow.birth_date}</div>
               <div><b>Vaccination: </b>{selectedCow.last_vaccination}</div>
               <div><b>Price:</b> {selectedCow.price}</div>
-              <div>
-                <button className="header" onClick={()=>getExtraDetails()}><b>Extra Details</b></button>
-                <button className={`btn-small ${isAdmin ? 'disabled' : ''}`}onClick={handleBuy} >Buy</button>
+              <div className="button-last">
+                <button className="button" onClick={()=>getExtraDetails()}><b>Extra Details</b></button>
+                <button className={`button ${isAdmin ? 'disabled' : ''}`}onClick={handleBuy} >Buy</button>
               </div>
             </div>
           </div>

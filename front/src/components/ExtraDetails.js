@@ -4,8 +4,10 @@ import '../styles/ExtraDetails.css'
 import employeeImg from './employee.jpg'
 import doc from './doc1.jpg';
 import room from './room.jpg';
+import { useNavigate } from "react-router-dom";
 
 const ExtraDetails = () => {
+  const navigate = useNavigate();
   const [currentCow, setCurrentCow] = useState("");
   const [cowDoc, setCowDoc] = useState([]);
   const [cowCaretaker,setCowCaretaker]=useState([]);
@@ -24,7 +26,7 @@ const ExtraDetails = () => {
       setCowDoc(response.data);
     };
     callCowDoc();
-  });
+  },[]);
   useEffect(() => {
     const callCowCaretaker = async () => {
       const response = await axios.post(
@@ -36,7 +38,7 @@ const ExtraDetails = () => {
       setCowCaretaker(response.data);
     };
     callCowCaretaker();
-  });
+  },[]);
   useEffect(() => {
     const callCowRoom = async () => {
       const response = await axios.post(
@@ -48,12 +50,13 @@ const ExtraDetails = () => {
       setCowRoom(response.data);
     };
     callCowRoom();
-  });
+  },[]);
+  function handleBack() {
+    window.history.back();
+  }
   return (
     <div className="details-flex">
-      <a href="/home">
-        <button><b> back </b></button>
-      </a>
+        <button onClick={()=>handleBack()}><b> Back </b></button>
       <div className="extra-details">
         <h3>Doctor details</h3>
         <div className="image-container">

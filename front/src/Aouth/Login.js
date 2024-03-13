@@ -28,13 +28,14 @@ function Login() {
       axios.post('http://localhost:8080/login', values)
         .then((res) => {
             console.log(res.data)
-          if (res.data === 'Success') {
-            localStorage.setItem("loginData", values.email);
-            localStorage.setItem("loginpass", values.password);
-            localStorage.setItem('isAuthenticated', 'true');
+          if (res.data) {
+            localStorage.setItem("loginData", res.data[0].email);
+            localStorage.setItem("auth", res.data[0].isadmin);
+            // localStorage.setItem("loginpass", res.data[0].password);
+            const auth = res.data[0].isadmin;
             console.log(loginData)
             setLoginData(values.email)
-            navigate('/home', { state: { loginData: values.email } });
+              navigate('/');
           } else {
             alert('No record exists');
           }
@@ -45,7 +46,7 @@ function Login() {
 
   return (
     <div className="login-box">
-      <h6><a href='/'>User </a><b>  /</b><a href='/login'>admin</a></h6>
+      {/* <h6><a href='/'>User </a><b>  /</b><a href='/login'>admin</a></h6> */}
      
     <h6>Sign in to cattle.io</h6>
     <h2>Login</h2>
@@ -72,7 +73,7 @@ function Login() {
         Sign in
       </button>
       <div className="forgot-password">
-        <a href='/signup'>Create accout</a>
+        <a href='/signup'>Create account</a>
       </div>
     </form>
   </div>

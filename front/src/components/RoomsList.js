@@ -1,4 +1,4 @@
-import "../styles/RoomsList.css";
+import "../styles/CattleList.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import roomimg from "./room.jpg";
