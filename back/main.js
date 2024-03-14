@@ -40,13 +40,13 @@ app.post("/notifyAdmin", (req, res) => {
   // Insert a new record into the notification table
   connection.query(
     "INSERT INTO notifications (email,cow_id) VALUES (?,?)",
-    [email,cowId],
+    [email, cowId],
     (error, results) => {
       if (error) {
         console.error("Error inserting notification:", error);
         res.status(500).json({ error: "Error inserting notification" });
       } else {
-        res.status(200).json({ message: "Notification sent to admin" });
+        res.status(200).send({ message: "Notification sent to admin" });
       }
     }
   );
@@ -59,9 +59,33 @@ app.get("/notifications", (req, res) => {
       console.error("Error fetching notifications:", error);
       res.status(500).json({ error: "Error fetching notifications" });
     } else {
+      console.log(results)
       res.status(200).json(results);
     }
   });
+});
+
+app.post("/buyCow", (req, res) => {
+  const { email, x } = req.body;
+  // console.log(req.body,email,x)
+  connection.query("DELETE FROM notifications WHERE email = ? AND cow_id = ?;", [email, x], (error,rtesult) => {
+    if (error) {
+      console.error("Error inserting notification:", error);
+      res.status(500).json({ error: "Error inserting notification" });
+    } else {
+      // console.log(rtesult)
+      connection.query("DELETE FROM cattle WHERE cow_id = ?;", [x], (error,result) => {
+        if (error) {
+          console.log(error)
+        }
+        else {
+          // console.log(result)
+          res.status(200).send({ message: "Successfully approved the transaction!" });
+        }
+      })
+    }
+  }
+  );
 });
 
 // Routes
@@ -88,14 +112,14 @@ app.post("/login", (req, res) => {
   connection.query(sql, values, (err, data) => {
     if (err) {
       console.error("Error querying data:", err);
-      return res.send({data:null,message:"Failed"});
+      return res.send({ data: null, message: "Failed" });
     }
     if (data.length > 0) {
       console.log(data[0]);
-      return res.send({data:data[0],message:"Success"});
+      return res.send({ data: data[0], message: "Success" });
     } else {
       console.log("FAILED")
-      return res.send({data:null,message:"Failed"});
+      return res.send({ data: null, message: "Failed" });
     }
   });
 });

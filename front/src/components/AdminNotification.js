@@ -4,14 +4,16 @@ import '../styles/Home.css';
 
 const AdminNotifications = () => {
   const [notifications, setNotifications] = useState([]);
-  function handleAccept() {
+  function handleAccept(x) {
     const email = localStorage.getItem("loginData");
-    const cowId = 1;
-
+    console.log(x)
+    // if (!x) {
+    //   return
+    // }
     axios
-      .post("http://localhost:8080/notifyAdmin", { email, cowId })
+      .post("http://localhost:8080/buyCow", { email, x })
       .then((response) => {
-        alert("confirm notification sent to user");
+        alert(response.data.message);
       })
       .catch((error) => {
         console.error("Error sending purchase request:", error);
@@ -22,22 +24,21 @@ const AdminNotifications = () => {
     axios
       .get("http://localhost:8080/notifications")
       .then((response) => {
-        setNotifications(response.data);
+      console.log(response.data)
+        setNotifications(response.data,"Nada");
       })
       .catch((error) => {
         console.error("Error fetching notifications:", error);
       });
-  }, []);
-  useEffect(()=>{
-    console.log(notifications)
-  },[notifications])
+  });
+
   return (
     <div className="notifications-container">
     <h2 className="notifications-heading">Admin Notifications</h2>
     <ul>
       {notifications.map((notification, index) => (
         <li key={index} className="notification-item">
-          {notification.message}<button onClick={handleAccept}>accept</button>
+          User with email {notification.email} wants to buy cow {notification.cow_id}<button onClick={()=>handleAccept(notification.cow_id)}>accept</button>
         </li>
       ))}
     </ul>
